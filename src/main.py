@@ -64,10 +64,12 @@ def save (pop, root_folder, gen):
 def evolution(pop, rate, generation, root_folder="") :
 
     pop_t = np.copy(pop).tolist()
-    max_fitness = np.max([agent.fitness for agent in pop_t])
+    pop_t.sort(key=lambda agent: agent.fitness, reverse=True)
+    best = pop_t[0]
     mean_fitness = []
+    max_fitnesses = [best.fitness]
     t = 0
-    while t < generation and max_fitness !=1 :
+    while t < generation and best.fitness !=1 :
 
         #print("Pop", [agent.ring_positions for agent in pop_t])
         bests = elete(pop_t, int(0.1*len(pop_t)))
@@ -77,14 +79,19 @@ def evolution(pop, rate, generation, root_folder="") :
 
         mean_ = np.mean([agent.fitness for agent in pop_t])
         mean_fitness += [mean_]
-        print("generation, ", t, " max fitness : ", mean_)
         #print("Fitness", [agent.fitness for agent in pop_t])
-        max_fitness = np.max([agent.fitness for agent in pop_t])
+        pop_t.sort(key=lambda agent: agent.fitness, reverse=True)
+        best = pop_t[0]
+        max_fitnesses += [best.fitness]
+        print("generation, ", t, " max fitness : ", best.fitness, "Max moves: ", len(set(best.move)))
+
         t = t+1
 
 
     return {"last" : pop_t,
-            "mean_fitness": mean_fitness}
+            "mean_fitness": mean_fitness,
+            "max_fitnesses": max_fitnesses,
+            "best": best}
 
 
 def main():
@@ -99,7 +106,7 @@ def main():
 
     colors = ['blue', 'red', 'green', 'white', 'yellow', 'white', 'white', 'white']
 
-    # right solution = [(4, "yellow"), (2, "green"), (0, "blue"), (1, "red")]
+    # optimal solution = [(4, "yellow"), (2, "green"), (0, "blue"), (1, "red")]
     ring_pos = [(4, "yellow"), (1, "green"), (2, "blue"), (0, "red")]
 
     pop_0 = init_pop(args.N, ring_pos, colors)
@@ -109,13 +116,17 @@ def main():
     #nx.draw(G,pos=nx.spring_layout(G), node_color=colors, labels={n: str(n) for n in G.nodes})
     #plt.show()
 
-
     print("*"*50)
     print(" "*10, "Starting the evolutionary algorithm", " "*10)
     data = evolution(pop_0, args.mu, args.T)
     print("*"*50)
 
-    plt.plot(data["mean_fitness"])
+    print("Best agent move set: ", data["best"].move)
+    print("Best agent ring positions: ", data["best"].ring_positions)
+
+    plt.plot(data["mean_fitness"], label="Mean fitness")
+    plt.plot(data["max_fitnesses"], label="Max fitness")
+    plt.legend()
     plt.ylabel(r"Poputation mean fitness ($f_t$)")
     plt.xlabel("Generation(t)")
     plt.savefig("../images/mean_fitness.pdf")

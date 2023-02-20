@@ -25,6 +25,7 @@ class Agent(object):
 
         ring = None
         ring_pos = [rg for rg in self.ring_positions]
+        moves = [mv for mv in self.move]
         for rn in ring_pos :
             if rate > random.rand() :
                 ring = rn
@@ -45,12 +46,12 @@ class Agent(object):
 
                 if check_move(ring_pos,pos_move) :
                         r = random.randint(0, len(pos_move))
-                        self.move += [[ring, (int(pos_move[r]), ring[-1])]]
+                        moves += [(int(pos_move[r]), ring[-1])]
                         for (i, r) in enumerate(ring_pos) :
                             if r[0] == node :
-                                ring_pos[i] = self.move[-1][-1]
+                                ring_pos[i] = moves[-1]
                         break
-        return Agent(self.graph, ring_pos, None, self.move)
+        return Agent(self.graph, ring_pos, None, moves)
 
 
     def evaluate_fitness (self):
