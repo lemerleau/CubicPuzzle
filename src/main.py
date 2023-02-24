@@ -5,6 +5,7 @@ import argparse
 import Agent2 as Agent
 import matplotlib.pyplot as plt
 import networkx as nx
+import utility
 
 
 """
@@ -28,6 +29,31 @@ def init_pop(pop_size, ring_pos, colors):
         print(n1,attr)
 
     agents = [Agent.Agent(G, ring_pos) for i in range(pop_size)]
+
+    evaluate(agents)
+
+    return agents
+
+def init_pop_dim_4_3(pop_size, ring_pos, colors, facecollection):
+    G = nx.Graph()
+
+    for i in range(16) :
+        G.add_node(i)
+
+    edges = [(0,1), (0,2), (0,4), (1,3), (1,5), (2,3), (2,6), (3,7), (4,5), (4,6), (5,7), (6,7),
+            (0,8), (1,9), (2,10), (3,11), (4,12), (5,13), (6,14), (7,15),
+            (8,9), (8,10), (8,12), (9,11), (9,13), (10,11), (10,14), (11, 15), (12, 13), (12, 14), (13, 15), (14,15)]
+
+    for ed in edges :
+        G.add_edge(ed[0], ed[1])
+
+    attributes = {n: {"color": colors[n]} for n in range(16)}
+    nx.set_node_attributes(G, attributes)
+
+    for n1,attr in G.nodes(data=True):
+        print(n1,attr)
+
+    agents = [Agent.Agent(G, ring_pos, facecollection= facecollection) for i in range(pop_size)]
 
     evaluate(agents)
 
@@ -106,18 +132,25 @@ def main():
     parser.add_argument('-sd', type=float, default=0.02, help="mutation effect on the fitness")
     args = parser.parse_args()
 
-
+    #initial population for dim = 3, rule = 2:
     colors = ['blue', 'red', 'green', 'white', 'yellow', 'white', 'white', 'white']
 
     # optimal solution = [(4, "yellow"), (2, "green"), (0, "blue"), (1, "red")]
     ring_pos = [(4, "yellow"), (1, "green"), (2, "blue"), (0, "red")]
 
     pop_0 = init_pop(args.N, ring_pos, colors)
+    
+    # #initial population for dim = 4, rule = 3:
 
-    print("Initial ring positions: ", ring_pos)
-    #G = pop_0[0].graph
-    #nx.draw(G,pos=nx.spring_layout(G), node_color=colors, labels={n: str(n) for n in G.nodes})
-    #plt.show()
+    # colors = ['blue', 'red', 'green', 'white', 'yellow', 'white', 'white', 'white', 'purple', 'white', 'white', 'white', 'white', 'white', 'white', 'white']
+    # ring_pos = [(4, "yellow"), (1, "green"), (2, "blue"), (0, "red"), (8, "purple")]
+    # pop_0 = init_pop_dim_4_3(args.N, ring_pos, colors, utility.get_facecollection(4,3))
+
+    # print("Initial ring positions: ", ring_pos)
+
+    # G = pop_0[0].graph
+    # nx.draw(G,pos=nx.spring_layout(G), node_color=colors, labels={n: str(n) for n in G.nodes})
+    # plt.show()
 
     print("*"*50)
     print(" "*10, "Starting the evolutionary algorithm", " "*10)
