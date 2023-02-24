@@ -1,11 +1,10 @@
 import numpy as np
 import pandas as pd
 import argparse
-import Agent
+#import Agent
+import Agent2 as Agent
 import matplotlib.pyplot as plt
 import networkx as nx
-
-
 
 
 """
@@ -25,6 +24,9 @@ def init_pop(pop_size, ring_pos, colors):
     attributes = {n: {"color": colors[n]} for n in range(8)}
     nx.set_node_attributes(G, attributes)
 
+    for n1,attr in G.nodes(data=True):
+        print(n1,attr)
+
     agents = [Agent.Agent(G, ring_pos) for i in range(pop_size)]
 
     evaluate(agents)
@@ -33,7 +35,9 @@ def init_pop(pop_size, ring_pos, colors):
 
 def elete(pop, size):
     pop.sort(key=lambda agent:agent.fitness, reverse=True)
-    return [Agent.Agent(parent.graph, parent.ring_positions, parent.fitness, parent.move) for parent in pop[:size]]
+
+    #if Using original agent, delete parent.facecollection from the arguments
+    return [Agent.Agent(parent.graph, parent.ring_positions, parent.facecollection, parent.fitness, parent.move) for parent in pop[:size]]
 
 
 def mutate_all(pop, rate) :
@@ -54,7 +58,6 @@ def select(pop, size) :
     parents = np.random.choice(pop, size=size, p=probs)
 
     return parents.tolist()
-
 
 
 def save (pop, root_folder, gen):
@@ -83,7 +86,7 @@ def evolution(pop, rate, generation, root_folder="") :
         pop_t.sort(key=lambda agent: agent.fitness, reverse=True)
         best = pop_t[0]
         max_fitnesses += [best.fitness]
-        print("generation, ", t, " max fitness : ", best.fitness, "Max moves: ", len(set(best.move)))
+        print("generation, ", t, " max fitness : ", best.fitness, "Max moves: ", len(best.move))
 
         t = t+1
 
@@ -129,7 +132,7 @@ def main():
     plt.legend()
     plt.ylabel(r"Poputation mean fitness ($f_t$)")
     plt.xlabel("Generation(t)")
-    plt.savefig("../images/mean_fitness.pdf")
+    plt.savefig("./images/mean_fitness.pdf")
     plt.show()
 
 

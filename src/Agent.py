@@ -47,7 +47,7 @@ class Agent(object):
                 if check_move(ring_pos,pos_move) :
                         r = random.randint(0, len(pos_move))
                         moves += [(int(pos_move[r]), ring[-1])]
-                        for (i, r) in enumerate(ring_pos) :
+                        for (i, r) in enumerate(ring_pos):
                             if r[0] == node :
                                 ring_pos[i] = moves[-1]
                         break
@@ -61,8 +61,6 @@ class Agent(object):
                 f += 1
 
         self.fitness = 1./(1+(len(self.ring_positions)-f))
-
-
 
 
 def check_move(ring_positions, nodes) :
