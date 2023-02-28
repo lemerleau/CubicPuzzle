@@ -62,7 +62,12 @@ class Agent(object):
 
         self.fitness = 1./(1+(len(self.ring_positions)-f))
 
+    def selection_force (self, alpha=0.8):
+        num_moves = 1
+        if len(self.move) > 0 :
+            num_moves = len(self.move)
 
+        return self.fitness*alpha + (1-alpha)*(1/(1+num_moves))
 
 
 def check_move(ring_positions, nodes) :
