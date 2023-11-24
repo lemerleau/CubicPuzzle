@@ -2,20 +2,23 @@
 
 from uuid import uuid4
 
-from numpy import random, array, where, copy
-import itertools
+from numpy import random, array, where
+import copy
+from itertools import combinations
 
 
 class Agent(object):
     """docstring for Cell."""
 
-    def __init__(self, G, pos, fitness=None, move=[]):
+    def __init__(self, G, pos, target, fitness=None, move=[], d=3):
         super(Agent, self).__init__()
         self.uid = str(uuid4())
         self.move = move
         self.graph = G #  a graph with n nodes, colors
         self.ring_positions = pos # list of (node, color)
         self.fitness = fitness
+        self.dimension = d
+        self.target = target
 
 
     # mutating an agent means making a move
@@ -29,6 +32,7 @@ class Agent(object):
         for rn in ring_pos :
             if rate > random.rand() :
                 ring = rn
+                break
 
         if ring :
 
@@ -54,12 +58,51 @@ class Agent(object):
         return Agent(self.graph, ring_pos, None, moves)
 
 
+    # mutating an agent means making a move
+    def mutatebetter(self, rate, k) :
+
+        ring_pos = copy.deepcopy(self.ring_positions)
+        moves = copy.deepcopy(self.move)
+        ring = None
+        for (i, rg) in enumerate(ring_pos)  :
+            if rate > random.rand() :
+                ring = rg
+                mut_pos = i
+                # break
+
+                # if ring :
+                format_str = '{0:0'+str(self.dimension)+'b}'
+                node =  ring[0]
+
+                node_bin = format_str.format(node)
+                faces = getFaces(node_bin, k)
+                freenodes = []
+                for face in faces :
+                    fn = getFreeNodes(face, node_bin, ring_pos, self.dimension)
+                    if fn:
+                        freenodes += fn
+
+                if len(freenodes)> 0 :
+                    r = random.randint(0, len(freenodes))
+                    moves += [(int(freenodes[r], 2), ring[-1])]
+                    ring_pos [mut_pos] = (int(freenodes[r], 2), ring[-1])
+
+        return Agent(None, ring_pos, self.target, None, moves, self.dimension)
+
+
     def evaluate_fitness (self):
         f = 0.
         for rp in self.ring_positions :
             if rp[-1] == self.graph.nodes[rp[0]]["color"] :
                 f += 1
+        self.fitness = 1./(1+(len(self.ring_positions)-f))
 
+    def evaluate_fitnessbetter (self):
+        f = 0.
+        # print("Target = ",self.target)
+        for rp in self.ring_positions :
+            if rp in self.target :
+                f += 1
         self.fitness = 1./(1+(len(self.ring_positions)-f))
 
     def selection_force (self, alpha=0.8):
@@ -77,3 +120,42 @@ def check_move(ring_positions, nodes) :
             if node == ring[0] :
                 return False
     return True
+
+def getFaces(node, k) :
+    faces = []
+
+    d = len(node)
+    for tpl in list(combinations(range(d), k)):
+        v = list(node)
+        for i in tpl :
+            v [i] = '*'
+        faces +=[v]
+
+    return faces
+
+def getFaceNodes(face, node) :
+
+    r = face.count('*')
+    format_str = '{0:0'+str(r)+'b}'
+    facevertices = []
+    for n in range(2**r) :
+        binn = format_str.format(n)
+        vertex = array(face)
+        idxs = where(vertex=='*') [0]
+        if len(idxs) == len(binn) :
+            vertex[idxs] = list(binn)
+            v = "".join(vertex.tolist())
+            if v != node:
+                facevertices += [v]
+
+    return facevertices
+
+def getFreeNodes(face, node,  labelled_nodes, d):
+    faceNodes = getFaceNodes(face, node)
+
+    format_str = '{0:0'+str(d)+'b}'
+
+    for (nd, color) in labelled_nodes :
+        if format_str.format(nd) in faceNodes:
+            return None
+    return faceNodes
