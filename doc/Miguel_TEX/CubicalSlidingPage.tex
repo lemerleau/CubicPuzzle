@@ -1,0 +1,102 @@
+\documentclass{article}
+%\usepackage{geometry} 
+%\geometry{letterpaper}
+
+\usepackage{ amssymb, amsmath, amsthm, amsfonts,mathrsfs, verbatim }
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{decorations.fractals, arrows, calc}
+%\usepackage[T1]{fontenc}
+%\usepackage{fontspec}
+%\setmainfont{Arial}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+
+\usepackage{xcolor}
+\usepackage{comment}
+%\usepackage{xy}
+\usepackage{luatex85}
+%\xyoption{all}
+\usepackage{cite}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {images/} }
+\usepackage{fullpage}
+\hyphenation{ho-mo-ge-ne-ous}
+\usepackage{ stmaryrd }
+\usepackage{enumerate}
+\usepackage{hyperref}%
+
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{notation}[theorem]{Notation}
+
+\renewcommand{\aa}{\overline{a}}
+\newcommand{\xx}{\overline{x}}
+\newcommand{\uu}[1]{\underline{x}}
+
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\BB}{\mathcal{B}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\UU}{\mathcal{U}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\SSS}{\mathbb{S}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Spec}{\mathsf{Spec}}
+\newcommand{\Len}{\mathsf{Length}}
+\newcommand{\Lie}{\mathsf{Lie}}
+\newcommand{\Span}{\mathsf{Span}}
+\newcommand{\Rs}{\mathsf{Rs}}
+\newcommand{\VR}{\mathrm{VR}}
+\newcommand{\card}{\mathrm{card}}
+\newcommand{\Cech}{\mathrm{Cech}}
+\newcommand{\Alpha}{\alpha}
+%\setlength{\parindent}{0pt}
+\newcommand{\abs}{\text{abs}}
+\newcommand{\Mag}{\mathrm{Mag}}
+\newcommand{\Mink}{\mathrm{Mink}}
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
+\newcommand{\grVect}{\catname{grVect}}
+
+\newcommand{\define}[1]{{\bf \boldmath{#1}}}
+
+\begin{document}
+\title{}
+\author{}
+\date{}
+\maketitle
+
+%\section{}
+
+The $15$-puzzle is a classic example often employed to demonstrate the potential for the configuration of starting positions to yield unsolvable results. Inspired by this premise, the authors \cite{beyer2023higher} examine a style of puzzle generalizing the rules of the $15$-puzzle in a higher dimensional setting. The setting is thus: consider the vertices of a $d$-dimensional cube and assign distinct colors to all but $\ell$ vertices, which are left open. For each of the $2^d-\ell$ colored vertices, there is a ring with the same colour and the target configuration consists of the one where the ring colors match the vertex colors. Then, by moving each ring to any free vertex (or unoccupied vertex) at a time, the goal of the game is to shift each ring to its target position. 
+
+The $15$-puzzle can be seen as a version of this game played on a 4x4 grid. In that setting, vertices block each other's movement simply by being in the way. However, topologically, this can be considered to represent the rule that movement is blocked when the $1$-simplex the ring would move over is occupied by another ring. The authors generalize this puzzle's setup as the $(d,k,\ell)$ scheme, where the puzzle is played on a $d$-dimensional cube with $2^d-\ell$ colored vertices and rings, and where each move consists of moving one ring to a vertex which shared the same $k$-face so long as any other rings do not occupy that face. In this sense, the $15$-puzzle is the $k=1$ case.
+
+The authors successfully establish strong conditions for the solvability of these puzzles and characterize the connectivity regime of $k$-mobile configurations (those puzzle configurations with no stuck vertices) as either one or two large components. However, the computation of the diameter of the puzzle graph (the greatest integer representing a minimal number of moves from one configuration to another) is known to be NP-hard in the case of the $15$-puzzle \cite{goldreich2011finding}. In the absence of theoretical precision, our goal is to implement methods from evolutionary algorithms to reinforcement learning to provide an appropriate estimate of the diameter for a given $(d,k,\ell)$ puzzle. We further seek to provide comparisons of the speed and accuracy of these methods to each other, as well as to human performance in an online version of this game.
+
+The problem of the cubical sliding puzzle provides a good setting in which to examine machine learning-based approaches to multi-agent pathfinding problems where solvability may or may not be assured and where conflict between vertices is not defined solely by overlap. The $k$-rule can be considered as a multi-agent conflict where an agent conflicts with another if they are within $k$ of each other in the Hamming distance. Notably, multi-agent pathfinding is employed in robotics \cite{veloso2015cobots}, warehouse management \cite{wurman2008coordinating}, and the management of aircraft \cite{morris2016planning}. However, traditional methods \cite{stern2019multi} \cite{stern2019multi} consider just conflicts which arise from descendants of the $k=1$ case. By generalizing the distance function for determining conflict, our examination of the cubical sliding puzzle provides a framework for studying approximately optimal solutions to multi-agent pathfinding problems with diverse distance requirements between agents.
+
+For human interaction with the cubical sliding puzzle, an available online application is a playable version of the problem for various starting configurations of differing dimensions and $k$-faces. Human input in this problem is critical for the understanding of the development of machine performance vis-a-vis human solutions. It will allow us to understand broadly how complex a problem of this nature is for human players. Further, interactive media such as this sliding puzzle is invaluable in spreading mathematics to new individuals and allows anyone at any level of expertise to grasp the nature of the problem at hand accurately. Hence, our study of the cubical sliding puzzle is both a formidable tool for the study of generalized multi-agent pathfinding problems and a vital tool for outreach beyond the traditional mathematical community. 
+
+
+\bibliographystyle{alpha}
+\bibliography{reference}
+	
+\end{document}

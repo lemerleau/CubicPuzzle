@@ -22,7 +22,7 @@ def main() :
     args = parser.parse_args()
 
     #Log folder for experiment level 2
-    root_path = args.path+"/"+str(args.dim)+"/level"+str(args.level)+"/mu/"
+    root_path = args.path+"/"+str(args.dim)+"/level"+str(args.level)+"/mubetter/"
     folders = os.listdir(root_path)
 
     print ("Folder names : ", folders)

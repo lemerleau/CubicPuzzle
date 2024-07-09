@@ -20,8 +20,8 @@ def main() :
     args = parser.parse_args()
 
     data = []
-    for i in range(args.nl):
-        with open("../data/dim/"+str(args.dim)+"/level"+str(i)+"_data.json", "r")as jsonfile :
+    for i in range(1,args.nl):
+        with open("../data/dim/"+str(args.dim)+"/level"+str(i)+"_levy_data.json", "r")as jsonfile :
             data  += [json.load(jsonfile)]
             jsonfile.close()
 
@@ -40,15 +40,17 @@ def main() :
     ax2.spines["right"].set_visible(False)
     ax2.spines["top"].set_visible(False)
     title_fontproperties = matplotlib.font_manager.FontProperties(weight="bold")
-    for i in range(args.nl) :
-        histo_data = data[i]["0.3"]
+    best_mu = "1.2"
+    print(len(data))
+    for i in range(args.nl-1) :
+        histo_data = data[i][best_mu]
         print(histo_data, set(histo_data))
         bar = ax.bar(list(set(histo_data)), [histo_data.count(s) for s in list(set(histo_data))],  width=.7, align='center')
         bar.set_label("Level "+str(i))
         ax2.bar(sorted(set(histo_data))[:13], [histo_data.count(s) for s in sorted(set(histo_data))[:13]],  width=.7, align='center')
 
     ax.legend(title="Difficulty levels:", title_fontproperties=title_fontproperties)
-    plt.savefig("../images/mu_0.3prime_histo_dim_"+str(args.dim)+"_alllevels.pdf")
+    plt.savefig("../images/mu_"+best_mu+"prime_histo_dim_"+str(args.dim)+"_alllevels.pdf")
     plt.show()
 
 

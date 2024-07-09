@@ -8,7 +8,6 @@ import json
 import argparse
 
 
-
 def main() :
 
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, argument_default=argparse.SUPPRESS)
@@ -19,15 +18,15 @@ def main() :
     args = parser.parse_args()
 
 
-    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_generation.json", "r") as jsonfile :
+    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_levy_generation.json", "r") as jsonfile :
         generations = json.load(jsonfile)
         jsonfile.close()
 
-    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_data.json", "r")as jsonfile :
+    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_levy_data.json", "r")as jsonfile :
         data = json.load(jsonfile)
         jsonfile.close()
 
-    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_fitness.json", "r")as jsonfile :
+    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_levy_fitness.json", "r")as jsonfile :
         fitnesses = json.load(jsonfile)
         jsonfile.close()
 
@@ -59,12 +58,12 @@ def main() :
     ax.spines["top"].set_visible(False)
     ax.set_ylabel(r"Distribution of number of moves",weight='bold', fontsize=13)
     ax.set_xlabel(r"Mutation rate ($\mu$)",weight='bold', fontsize=13)
-    ax.boxplot([data[str(key)] for key in mut_params], labels=mut_params)
+    ax.plot(mut_params,[np.mean(data[str(key)]) for key in mut_params], 'o-')
     plt.title("Puzzle Level "+str(args.level), fontsize=17,weight="bold")
     plt.savefig("../images/mu_dim"+str(args.dim)+"_level"+str(args.level)+".pdf")
     plt.show()
 
-    histo_data = data["0.3"]
+    histo_data = data["1.0"]
     print(histo_data, set(histo_data), len(histo_data))
     figure = plt.figure(constrained_layout=True, figsize=(10,4))
     gs = figure.add_gridspec(nrows=1, ncols=1, left=0.05, right=0.48, wspace=0.05)
