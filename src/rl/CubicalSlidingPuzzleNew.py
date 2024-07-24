@@ -37,7 +37,7 @@ class Move:
         return hash((self.row, self.flipIndices))
 
 class NodeState:
-    def __init__(self, nodeArray, k, fcost = 0, hcost = 0, targetNodeState = None, parentNodeState = None, epsilon = 1):
+    def __init__(self, nodeArray, k, d = None, fcost = 0, hcost = 0, targetNodeState = None, parentNodeState = None, epsilon = 1, colorDict = None, numDict = None):
         """
         
 
@@ -62,23 +62,46 @@ class NodeState:
         self.nodeArray = nodeArray
         self.epsilon = epsilon
         self.parentNodeState = parentNodeState
-        self.hashTuple = tuple(self.nodeArray.flatten())
-        self.d = len(nodeArray[0])
+        #self.hashTuple = tuple(self.nodeArray.flatten())
+        if d is None:
+            self.d = len(nodeArray[0])
+        else:
+            self.d = d
         self.k = k
         self.fcost = fcost
-        self.colorDict = {
-            0 : "green",
-            1 : "purple",
-            2 : "red",
-            3 : "blue",
-            4 : "yellow",
-            5 : "orange",
-            6 : "magenta",
-            7 : "cyan",
-            8 : "brown",
-            9 : "black",
-            10: "white"
-            }
+        if colorDict == None and numDict == None:
+            self.colorDict = {
+                0 : "green",
+                1 : "purple",
+                2 : "red",
+                3 : "blue",
+                4 : "yellow",
+                5 : "orange",
+                6 : "magenta",
+                7 : "cyan",
+                8 : "brown",
+                9 : "black",
+                10: "white"
+                }
+            self.numDict = {
+                "green" : 0,
+                "purple" : 1,
+                "red" : 2,
+                "blue" : 3,
+                "yellow" : 4,
+                "orange" : 5,
+                "magenta" : 6,
+                "cyan" : 7,
+                "brown" : 8,
+                "black" : 9,
+                "white" : 10
+                }
+        else:
+            self.colorDict = colorDict
+            self.numDict = numDict
+        if type(nodeArray[0][1]) == str:
+            self.nodeArray = self.GetNodeArray(nodeArray)
+        self.hashTuple = tuple(self.nodeArray.flatten())
         if targetNodeState != None:
             self.hcost = self.epsilon * np.sum(np.ceil(np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray), axis = 1)/self.k))
             #self.hcost = self.epsilon * np.sum(np.ceil(np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray), axis = 1)/3))
@@ -184,6 +207,23 @@ class NodeState:
             gameList.append((out, self.colorDict[i]))
         return gameList
     
+    def GetNodeArray(self, colorArray):
+        colorArray = [list(node) for node in colorArray]
+        colorList = [node[1] for node in colorArray]
+        colorNums = range(len(colorList))
+        for num in colorNums:
+            self.colorDict[num] = colorList[num]
+            self.numDict[colorList[num]] = num
+        nodeArray = np.zeros((len(colorArray), self.d))
+        for i in range(nodeArray.shape[0]):
+            for j in range(self.d):
+                if colorArray[i][0]>=2**(self.d-j-1):
+                    colorArray[i][0] -= 2**(self.d-j-1)
+                    nodeArray[i,self.d-j-1] = 1
+        return nodeArray
+        
+            
+    
 def CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations):
     numberOfColors = 2**d-l
     nodeArray = np.zeros((numberOfColors, d))
@@ -228,6 +268,9 @@ def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray 
     if type(startNodeArray) == np.ndarray and type(targetNodeArray) == np.ndarray: #Initializes specified nodestates
         targetNodeState = NodeState(targetNodeArray, k, epsilon = epsilon)
         startNodeState = NodeState(startNodeArray, k, targetNodeState = targetNodeState, epsilon = epsilon)
+    elif type(startNodeArray) == list and type(targetNodeArray) == list:
+        targetNodeState = NodeState(targetNodeArray, k, epsilon = epsilon, d = d)
+        startNodeState = NodeState(startNodeArray, k, targetNodeState = targetNodeState, epsilon = epsilon, d = d)
     else:
         startNodeState, targetNodeState = CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations) #Runs code to get starting and target nodestates from random selection.
     print(startNodeState.nodeArray)
