@@ -209,7 +209,12 @@ class NodeState:
         return gameList
     
     def GetNodeArray(self, colorArray):
-        colorArray = [list(node) for node in colorArray]
+        print(colorArray)
+        for i in range(len(colorArray)):
+            colorArray[i] = list(colorArray[i])
+            colorArray[i].append(self.numDict[colorArray[i][1]])
+        colorArray.sort(key = lambda row: row[2])
+        print(colorArray)
         colorList = [node[1] for node in colorArray]
         colorNums = range(len(colorList))
         for num in colorNums:
