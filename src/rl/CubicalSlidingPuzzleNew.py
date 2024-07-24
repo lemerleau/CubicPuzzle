@@ -192,7 +192,8 @@ class NodeState:
             newNodeArray[move.row,i] = np.mod(newNodeArray[move.row,i] + 1, 2)
         newNodeState = NodeState(newNodeArray, self.k, fcost = self.fcost + 1, 
                                  targetNodeState = self.targetNodeState,
-                                 parentNodeState = self, epsilon = self.epsilon)
+                                 parentNodeState = self, epsilon = self.epsilon,
+                                 colorDict= self.colorDict, numDict=self.numDict)
 
         return newNodeState
     
