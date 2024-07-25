@@ -6,14 +6,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
-
-
-
-
-
 def main() :
-    folders = os.listdir("../log/alpha/")
+    root_path = "../log/dim/3/level0/alpha/"
+    folders = os.listdir(root_path)
 
     print ("Folder names : ", folders)
     data = {}
@@ -21,17 +16,17 @@ def main() :
     for f in folders :
         data[f] = []
         genrations[f] = []
-        files = os.listdir("../log/alpha/"+f)
+        files = os.listdir(root_path+f)
 
         for fil in files :
-            df = pd.read_csv("../log/alpha/"+f+"/"+fil)
+            df = pd.read_csv(root_path+f+"/"+fil)
             df = df[df['fitness']==1.0]
             if len(df.values) >0 :
                 data[f] += [min([len(ast.literal_eval(d)) for d in df['moves']])]
                 #data[f] += [max(df["fitness"].values.tolist())]
             #data[f] += [max(df["fitness"].values.tolist())]
             genrations [f] += [int(fil[3:-4])]
-            #data[f] += [min([len(ast.literal_eval(d)) for d in df['moves']])]
+            #data[f] += [np.min([len(ast.literal_eval(d)) for d in df['moves']])]
 
         print("Folder, ", f, "done. ", len(data[f]), len(files) )
 
@@ -70,7 +65,7 @@ def main() :
     figure = plt.figure(constrained_layout=True, figsize=(7,4))
     gs = figure.add_gridspec(nrows=1, ncols=1, left=0.05, right=0.48, wspace=0.05)
     ax = figure.add_subplot(gs[0,0])
-    ax.plot(alpha_params, [np.median(data[str(alpha)]) for alpha in alpha_params], "o-")
+    ax.plot(alpha_params, [data[str(alpha)].count(6) for alpha in alpha_params], "o-")
     plt.xlabel(r"Selection force ($\alpha$)", weight='bold', fontsize=13)
     plt.ylabel(r"Median number of moves", weight='bold', fontsize=13)
     ax3 = ax.twinx()
@@ -78,7 +73,7 @@ def main() :
     plt.ylabel(r"Success rate (%)", weight="bold", fontsize=13)
     plt.savefig("../images/success_alpha_moves.pdf")
     plt.show()
-    histo_data = data["0.05"]
+    histo_data = data["0.8"]
     print(histo_data, set(histo_data))
     figure = plt.figure(constrained_layout=True, figsize=(10,4))
     gs = figure.add_gridspec(nrows=1, ncols=1, left=0.05, right=0.48, wspace=0.05)

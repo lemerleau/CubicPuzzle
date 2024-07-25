@@ -27,19 +27,19 @@ class Move:
         """
         self.row = row
         self.flipIndices = flipIndices
-        
-    def __eq__(self, other): 
+
+    def __eq__(self, other):
         if not isinstance(other, Move):
             return NotImplemented
         return self.row == other.row and self.flipIndices == other.flipIndices
-    
+
     def __hash__(self):
         return hash((self.row, self.flipIndices))
 
 class NodeState:
     def __init__(self, nodeArray, k, fcost = 0, hcost = 0, targetNodeState = None, parentNodeState = None, epsilon = 1):
         """
-        
+
 
         Parameters
         ----------
@@ -67,13 +67,13 @@ class NodeState:
         self.k = k
         self.fcost = fcost
         self.colorDict = {
-            0 : "green",
+            0 :"yellow",
             1 : "purple",
-            2 : "red",
-            3 : "blue",
-            4 : "yellow",
-            5 : "orange",
-            6 : "magenta",
+            2 : "orange",
+            3 : "magenta",
+            4 : "green",
+            5 : "red",
+            6 : "blue",
             7 : "cyan",
             8 : "brown",
             9 : "black",
@@ -88,22 +88,22 @@ class NodeState:
             self.targetNodeState = targetNodeState
             self.hcost = self.epsilon * hcost
         self.gcost = self.hcost + self.fcost
-        
-    def __eq__(self, other): 
+
+    def __eq__(self, other):
         if not isinstance(other, NodeState):
             return NotImplemented
         return (self.nodeArray == other.nodeArray).all()
-    
+
     def __hash__(self):
         return hash(self.hashTuple)
-    
+
     def UpdateHCost(self, targetNodeState):
         self.hcost = self.epsilon * np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray))
         self.gcost = self.fcost + (self.hcost)
-        
+
     def GetMoves(self):
         """
-        
+
 
         Returns
         -------
@@ -125,7 +125,7 @@ class NodeState:
                             if newMove not in moveList:
                                 moveList.append(newMove)
         return moveList
-    
+
     def GetRandomMove(self, excludeList = []):
         #print(len(excludeList))
         rowList = list(range(len(self.nodeArray)))
@@ -148,10 +148,10 @@ class NodeState:
                     if nextState not in excludeList and nextState != self:
                         return nextState
         return None
-        
+
     def MakeMove(self, move):
         """
-        
+
 
         Parameters
         ----------
@@ -167,12 +167,12 @@ class NodeState:
         newNodeArray = c.deepcopy(self.nodeArray)
         for i in move.flipIndices:
             newNodeArray[move.row,i] = np.mod(newNodeArray[move.row,i] + 1, 2)
-        newNodeState = NodeState(newNodeArray, self.k, fcost = self.fcost + 1, 
+        newNodeState = NodeState(newNodeArray, self.k, fcost = self.fcost + 1,
                                  targetNodeState = self.targetNodeState,
                                  parentNodeState = self, epsilon = self.epsilon)
 
         return newNodeState
-    
+
     def GetGameArray(self):
         gameList = []
         for i in range(len(self.nodeArray)):
@@ -181,9 +181,9 @@ class NodeState:
             for j in self.nodeArray[i]:
                 out += j*(2**c)
                 c += 1
-            gameList.append((out, self.colorDict[i]))
+            gameList.append((out, self.colorDict[out]))
         return gameList
-    
+
 def CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations):
     numberOfColors = 2**d-l
     nodeArray = np.zeros((numberOfColors, d))
@@ -200,8 +200,8 @@ def CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations):
     targetNodeState = NodeState(targetNodeArray, k)
     startNodeState = NodeState(nodeArray, k, targetNodeState = targetNodeState)
     return startNodeState, targetNodeState
-        
-    
+
+
 def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray = None, targetNodeArray = None, epsilon = 1):
     """
     Parameters
@@ -235,20 +235,20 @@ def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray 
     if startNodeState == targetNodeState:
         return 0
     deadList = [startNodeState] #NodeStates in the deadList cannot be branched to.
-    openList = [startNodeState] #NodeStates in the openList can be branched from. 
+    openList = [startNodeState] #NodeStates in the openList can be branched from.
     currentNodeState = startNodeState
     while True:
         moves = currentNodeState.GetMoves()  #retrieves all valid moves from a given nodestate
         openList.remove(currentNodeState)
         deadList.append(currentNodeState)
-        if currentNodeState == targetNodeState: #If the targetNodeState appears, returns the fcost to get there. This is the number of steps. 
+        if currentNodeState == targetNodeState: #If the targetNodeState appears, returns the fcost to get there. This is the number of steps.
             done = currentNodeState.parentNodeState
             printNodeState = currentNodeState
             while done != None:
                 print(printNodeState.GetGameArray())
                 printNodeState = printNodeState.parentNodeState
                 done = printNodeState
-            return currentNodeState.gcost, currentNodeState  
+            return currentNodeState.gcost, currentNodeState
         #print(currentNodeState.nodeArray)
         for move in moves:                               #for all moves...
             #print(move.row, move.flipIndices)
@@ -266,5 +266,3 @@ def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray 
             if openNodeState.gcost < minScore:
                 minScore = openNodeState.gcost
                 currentNodeState = openNodeState
-                
-                

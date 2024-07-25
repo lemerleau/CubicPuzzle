@@ -63,7 +63,7 @@ def main() :
     plt.savefig("../images/mu_dim"+str(args.dim)+"_level"+str(args.level)+".pdf")
     plt.show()
 
-    histo_data = data["1.0"]
+    histo_data = data["1.4"]
     print(histo_data, set(histo_data), len(histo_data))
     figure = plt.figure(constrained_layout=True, figsize=(10,4))
     gs = figure.add_gridspec(nrows=1, ncols=1, left=0.05, right=0.48, wspace=0.05)
@@ -82,7 +82,7 @@ def main() :
     plot_data = histo_data[histo_data<25].tolist()
     ax2.bar(list(set(plot_data)), [plot_data.count(s) for s in sorted(set(plot_data))],  width=.7, align='center')
 
-    plt.savefig("../images/mu_0.3prime_histo_dim_"+str(args.dim)+"_level"+str(args.level)+".pdf")
+    #plt.savefig("../images/mu_0.3prime_histo_dim_"+str(args.dim)+"_level"+str(args.level)+".pdf")
     plt.show()
 
 
