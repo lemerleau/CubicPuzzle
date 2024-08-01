@@ -209,22 +209,23 @@ class NodeState:
         return gameList
     
     def GetNodeArray(self, colorArray):
+        sortingArray = c.deepcopy(colorArray)
         print(colorArray)
-        for i in range(len(colorArray)):
-            colorArray[i] = list(colorArray[i])
-            colorArray[i].append(self.numDict[colorArray[i][1]])
-        colorArray.sort(key = lambda row: row[2])
-        print(colorArray)
-        colorList = [node[1] for node in colorArray]
+        for i in range(len(sortingArray)):
+            sortingArray[i] = list(sortingArray[i])
+            sortingArray[i].append(self.numDict[colorArray[i][1]])
+        sortingArray.sort(key = lambda row: row[2])
+        print(sortingArray)
+        colorList = [node[1] for node in sortingArray]
         colorNums = range(len(colorList))
         for num in colorNums:
             self.colorDict[num] = colorList[num]
             self.numDict[colorList[num]] = num
-        nodeArray = np.zeros((len(colorArray), self.d))
+        nodeArray = np.zeros((len(sortingArray), self.d))
         for i in range(nodeArray.shape[0]):
             for j in range(self.d):
-                if colorArray[i][0]>=2**(self.d-j-1):
-                    colorArray[i][0] -= 2**(self.d-j-1)
+                if sortingArray[i][0]>=2**(self.d-j-1):
+                    sortingArray[i][0] -= 2**(self.d-j-1)
                     nodeArray[i,self.d-j-1] = 1
         return nodeArray
         
