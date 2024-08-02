@@ -137,7 +137,7 @@ class NodeState:
         moveList = []
         faces = list(it.combinations(range(self.d), self.k))
         for i in range(len(self.nodeArray)):
-            faceArray = np.delete(self.nodeArray, i, axis = 0) - self.nodeArray[i]
+            faceArray = np.abs(np.delete(self.nodeArray, i, axis = 0) - self.nodeArray[i])
             for face in faces:
                 rowSumFace = np.sum(np.delete(faceArray, face, axis = 1), axis = 1)
                 if 0 not in rowSumFace:
