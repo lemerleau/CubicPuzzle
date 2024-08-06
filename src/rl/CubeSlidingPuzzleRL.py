@@ -19,7 +19,7 @@ def ReturnNextCubeStates(state):
         nextCubeStateList.append(gl.State(state.stateData.MakeMove(move), state.nextStateRule, state.determineWinnerRule, state.stateSpace, lastState = state, permitRepeatedStates = False))
     return nextCubeStateList
 
-def RunRL(x, d, level, k):
+def RunRL(x, d, level, k, initial = 100):
     ad = d
     al = level
     if ad == 3 :
@@ -84,7 +84,7 @@ def RunRL(x, d, level, k):
             return None
     
     #if actualOptimal != np.inf:
-    stateSpace = gl.RunGameLearn(startState, ReturnNextCubeStates, DetermineWinnerRule, 1000, permitRepeatedStates = False, targetStateData=targetState, initializationSize=100, learningRate = .05)
+    stateSpace = gl.RunGameLearn(startState, ReturnNextCubeStates, DetermineWinnerRule, 1000, permitRepeatedStates = False, targetStateData=targetState, initializationSize= initial, learningRate = .05)
     return stateSpace.optimal + 1
 
 
