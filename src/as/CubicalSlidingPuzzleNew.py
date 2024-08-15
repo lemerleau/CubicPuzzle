@@ -137,11 +137,7 @@ class NodeState:
         moveList = []
         faces = list(it.combinations(range(self.d), self.k))
         for i in range(len(self.nodeArray)):
-            #print("Node array: ", self.nodeArray)
             faceArray = np.abs(np.delete(self.nodeArray, i, axis = 0) - self.nodeArray[i])
-            #print("face array: ",faceArray)
-            #print("New node array: ", self.nodeArray)
-            #exit(1)
             for face in faces:
                 rowSumFace = np.sum(np.delete(faceArray, face, axis = 1), axis = 1)
                 if 0 not in rowSumFace:
@@ -211,10 +207,17 @@ class NodeState:
                 c += 1
             gameList.append((out, self.colorDict[i]))
         return gameList
+<<<<<<< HEAD:src/as/CubicalSlidingPuzzleNew.py
 
     def GetNodeArray(self, colorArray):
         sortingArray = c.deepcopy(colorArray)
 
+=======
+
+    def GetNodeArray(self, colorArray):
+        sortingArray = c.deepcopy(colorArray)
+        print(colorArray)
+>>>>>>> miguel:src/rl/CubicalSlidingPuzzleNew.py
         for i in range(len(sortingArray)):
             sortingArray[i] = list(sortingArray[i])
             sortingArray[i].append(self.numDict[colorArray[i][1]])
