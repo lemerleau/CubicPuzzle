@@ -3,8 +3,22 @@ import numpy as np
 from utils import *
 import CubicalSlidingPuzzleNew as csp
 import argparse
+import pandas as pd
+from multiprocess import Pool, cpu_count
+
+def as_call(params):
+    d = params['d']
+    l = params['l']
+    k = params['k']
+    tgt = params['target']
+    start = params['start']
+    v = params['verbose']
+
+    actualOptimal = csp.SolveCubicalSlidingPuzzle(d, k, l,
+                    startNodeArray = start,targetNodeArray = tgt, verbose=v)
 
 
+    return actualOptimal
 
 
 
@@ -13,8 +27,8 @@ def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, argument_default=argparse.SUPPRESS)
     parser.add_argument('-k', type=int, default=None, help="Move dimension. When not given, the default value is k = dimension -1")
     parser.add_argument('--job', type=int,default=1, help="Number of jobs")
-    parser.add_argument('--print', action="store_true", default=False, help="run in a verbose mode")
-    parser.add_argument('--alpha', type=float, default=0.8, help="balancing parameter for the selection force fitness and number of move")
+    parser.add_argument('--verbose','-v', action="store_true", default=False, help="run in a verbose mode")
+    parser.add_argument('--save','-s', action="store_true", default=False, help="save solution data in ../data/ folder")
     parser.add_argument('--level', type=int,default=0, help="Level of the puzzle difficulty. They are four levels: 0: easy")
     parser.add_argument('--dim', type=int,default=3, help="Dimension of the puzzle. They are only two considered 3 and 4")
 
@@ -58,18 +72,60 @@ def main():
         target = [(4, "blue"), (13, "green"), (1, "yellow"), (5, "red"), (7,"purple")]
 
     #startState, targetState = csp.CubicalSlidingPuzzleInitialPosition(3, 2, 4, 4)
+    numDict = {}
+    colorDict = {}
+    for i in range(2**args.dim) :
+        numDict[colors[0]]= i
+        colorDict[i] = colors[0]
 
     new_s, new_t = from_dict_to_ndarr(start, target, args.dim)
-    targetState = csp.NodeState(new_t, 2, epsilon = 1)
-    startState = csp.NodeState(new_s, 2, targetNodeState = targetState, epsilon = 1)
-    print(startState.nodeArray)
-    print(targetState.nodeArray)
+    ns = csp.NodeState(new_t, 2, epsilon = 1, colorDict = None, numDict = None)
     print("start -> {} \ntarget -> {}".format(start, target))
-    print("newstart -> {} \nnewtarget -> {}".format(new_s, new_t))
     print("*"*25)
-    print("Game array: ", targetState.GetGameArray())
-
-
+    print("Results")
+    print("*"*25)
+    print(f"Number of jobs: {args.job}")
+    params = []
+    for i in range(args.job) :
+        params += [{
+        "job_id": i,
+        'k': k,
+        "start": start,
+        "target": target,
+        "d": args.dim,
+        'l': 2**args.dim - len(target),
+        'verbose': args.verbose,
+        'level': args.level
+        }]
+    pool = Pool(cpu_count())
+    outputs = pool.map(as_call, params)
+    pool.close()
+    rst_data = []
+    for j, rst in enumerate(outputs) :
+        print(f"JobID: {j}, Min move: {rst[0]}")
+        if rst != 0 :
+            if len(rst)>0 and rst[-1] != None:
+                print("List of moves")
+                print("*"*25)
+                listMoves = []
+                cfgs = rst[-1]
+                #for cfg in cfgs :
+                #    print(cfg)
+                for i in range(len(cfgs)-1, 0, -1):
+                    listMoves += list(set(cfgs[i-1])-set(cfgs[i]))
+                print(listMoves)
+                print("*"*25)
+                rst_data +=[{'d': params[j]['d'],
+                             'k': params[j]['k'],
+                             'l': params[j]['l'],
+                             'level': params[j]['level'],
+                             'Min': int(rst[0]),
+                             'Moves': listMoves}]
+    #print(rst_data)
+    df_rst = pd.DataFrame(rst_data)
+    if args.save :
+        log_folder = "../../data/as/dim/"+str(args.dim)+"/k/"+str(k)+"/level"+str(args.level)+"/"
+        df_rst.to_csv(log_folder+"as_solutions"+str(args.job)+".csv")
 
 if __name__ == '__main__':
     main()

@@ -37,7 +37,7 @@ class Move:
         return hash((self.row, self.flipIndices))
 
 class NodeState:
-    def __init__(self, nodeArray, k, fcost = 0, hcost = 0, targetNodeState = None, parentNodeState = None, epsilon = 1):
+    def __init__(self, nodeArray, k, d = None, fcost = 0, hcost = 0, targetNodeState = None, parentNodeState = None, epsilon = 1, colorDict = None, numDict = None):
         """
 
 
@@ -62,23 +62,46 @@ class NodeState:
         self.nodeArray = nodeArray
         self.epsilon = epsilon
         self.parentNodeState = parentNodeState
-        self.hashTuple = tuple(self.nodeArray.flatten())
-        self.d = len(nodeArray[0])
+        #self.hashTuple = tuple(self.nodeArray.flatten())
+        if d is None:
+            self.d = len(nodeArray[0])
+        else:
+            self.d = d
         self.k = k
         self.fcost = fcost
-        self.colorDict = {
-            0 :"yellow",
-            1 : "purple",
-            2 : "orange",
-            3 : "magenta",
-            4 : "green",
-            5 : "red",
-            6 : "blue",
-            7 : "cyan",
-            8 : "brown",
-            9 : "black",
-            10: "white"
-            }
+        if colorDict == None and numDict == None:
+            self.colorDict = {
+                0 : "green",
+                1 : "purple",
+                2 : "red",
+                3 : "blue",
+                4 : "yellow",
+                5 : "orange",
+                6 : "magenta",
+                7 : "cyan",
+                8 : "brown",
+                9 : "black",
+                10: "white"
+                }
+            self.numDict = {
+                "green" : 0,
+                "purple" : 1,
+                "red" : 2,
+                "blue" : 3,
+                "yellow" : 4,
+                "orange" : 5,
+                "magenta" : 6,
+                "cyan" : 7,
+                "brown" : 8,
+                "black" : 9,
+                "white" : 10
+                }
+        else:
+            self.colorDict = colorDict
+            self.numDict = numDict
+        if type(nodeArray[0][1]) == str:
+            self.nodeArray = self.GetNodeArray(nodeArray)
+        self.hashTuple = tuple(self.nodeArray.flatten())
         if targetNodeState != None:
             self.hcost = self.epsilon * np.sum(np.ceil(np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray), axis = 1)/self.k))
             #self.hcost = self.epsilon * np.sum(np.ceil(np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray), axis = 1)/3))
@@ -114,7 +137,11 @@ class NodeState:
         moveList = []
         faces = list(it.combinations(range(self.d), self.k))
         for i in range(len(self.nodeArray)):
-            faceArray = np.delete(self.nodeArray, i, axis = 0) - self.nodeArray[i]
+            #print("Node array: ", self.nodeArray)
+            faceArray = np.abs(np.delete(self.nodeArray, i, axis = 0) - self.nodeArray[i])
+            #print("face array: ",faceArray)
+            #print("New node array: ", self.nodeArray)
+            #exit(1)
             for face in faces:
                 rowSumFace = np.sum(np.delete(faceArray, face, axis = 1), axis = 1)
                 if 0 not in rowSumFace:
@@ -127,24 +154,24 @@ class NodeState:
         return moveList
 
     def GetRandomMove(self, excludeList = []):
-        #print(len(excludeList))
+
         rowList = list(range(len(self.nodeArray)))
         np.random.shuffle(rowList)
         attemptThese = list(it.combinations(range(self.d), self.k))
-        #print(rowList)
+
         for row in rowList:
             np.random.shuffle(attemptThese)
-            #print(attemptThese)
+
             faceArray = np.delete(self.nodeArray, row, axis = 0) - self.nodeArray[row]
-            #print(faceArray)
+
             for comb in attemptThese:
                 rowSumFace = np.sum(np.delete(faceArray, list(comb), axis = 1), axis = 1)
-                #print(rowSumFace)
+
                 if 0 not in rowSumFace:
                     j = np.random.randint(1, self.k+1)
                     move = tuple(random.choices(comb, k = j))
                     nextState = self.MakeMove(Move(row, move))
-                    #print(nextState.nodeArray)
+
                     if nextState not in excludeList and nextState != self:
                         return nextState
         return None
@@ -169,7 +196,8 @@ class NodeState:
             newNodeArray[move.row,i] = np.mod(newNodeArray[move.row,i] + 1, 2)
         newNodeState = NodeState(newNodeArray, self.k, fcost = self.fcost + 1,
                                  targetNodeState = self.targetNodeState,
-                                 parentNodeState = self, epsilon = self.epsilon)
+                                 parentNodeState = self, epsilon = self.epsilon,
+                                 colorDict= self.colorDict, numDict=self.numDict)
 
         return newNodeState
 
@@ -181,8 +209,30 @@ class NodeState:
             for j in self.nodeArray[i]:
                 out += j*(2**c)
                 c += 1
-            gameList.append((out, self.colorDict[out]))
+            gameList.append((out, self.colorDict[i]))
         return gameList
+
+    def GetNodeArray(self, colorArray):
+        sortingArray = c.deepcopy(colorArray)
+
+        for i in range(len(sortingArray)):
+            sortingArray[i] = list(sortingArray[i])
+            sortingArray[i].append(self.numDict[colorArray[i][1]])
+        sortingArray.sort(key = lambda row: row[2])
+
+        colorList = [node[1] for node in sortingArray]
+        colorNums = range(len(colorList))
+        for num in colorNums:
+            self.colorDict[num] = colorList[num]
+            self.numDict[colorList[num]] = num
+        nodeArray = np.zeros((len(sortingArray), self.d))
+        for i in range(nodeArray.shape[0]):
+            for j in range(self.d):
+                if sortingArray[i][0]>=2**(self.d-j-1):
+                    sortingArray[i][0] -= 2**(self.d-j-1)
+                    nodeArray[i,self.d-j-1] = 1
+        return nodeArray
+
 
 def CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations):
     numberOfColors = 2**d-l
@@ -202,7 +252,7 @@ def CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations):
     return startNodeState, targetNodeState
 
 
-def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray = None, targetNodeArray = None, epsilon = 1):
+def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray = None, targetNodeArray = None, epsilon = 1, verbose=False):
     """
     Parameters
     ----------
@@ -225,13 +275,19 @@ def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray 
         DESCRIPTION.
 
     """
+    moveList = []
     if type(startNodeArray) == np.ndarray and type(targetNodeArray) == np.ndarray: #Initializes specified nodestates
         targetNodeState = NodeState(targetNodeArray, k, epsilon = epsilon)
         startNodeState = NodeState(startNodeArray, k, targetNodeState = targetNodeState, epsilon = epsilon)
+    elif type(startNodeArray) == list and type(targetNodeArray) == list:
+        targetNodeState = NodeState(targetNodeArray, k, epsilon = epsilon, d = d)
+        startNodeState = NodeState(startNodeArray, k, targetNodeState = targetNodeState, epsilon = epsilon, d = d)
     else:
         startNodeState, targetNodeState = CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations) #Runs code to get starting and target nodestates from random selection.
-    print(startNodeState.nodeArray)
-    print(targetNodeState.nodeArray)
+
+    if verbose :
+        print(startNodeState.nodeArray)
+        print(targetNodeState.nodeArray)
     if startNodeState == targetNodeState:
         return 0
     deadList = [startNodeState] #NodeStates in the deadList cannot be branched to.
@@ -245,10 +301,14 @@ def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray 
             done = currentNodeState.parentNodeState
             printNodeState = currentNodeState
             while done != None:
-                print(printNodeState.GetGameArray())
+                moveList +=[printNodeState.GetGameArray()]
+                if verbose:
+                    print(printNodeState.GetGameArray())
+
                 printNodeState = printNodeState.parentNodeState
                 done = printNodeState
-            return currentNodeState.gcost, currentNodeState
+
+            return currentNodeState.gcost, currentNodeState, moveList
         #print(currentNodeState.nodeArray)
         for move in moves:                               #for all moves...
             #print(move.row, move.flipIndices)
