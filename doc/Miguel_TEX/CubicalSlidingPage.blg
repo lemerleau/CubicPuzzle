@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: CubicalSlidingPage.aux
+The style file: alpha.bst
+Database file #1: reference.bib
+Repeated entry---line 27 of file reference.bib
+ : @article{stern2019multi
+ :                        ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in stern2019multi
+You've used 6 entries,
+            2543 wiz_defined-function locations,
+            594 strings with 5766 characters,
+and the built_in function-call counts, 3092 in all, are:
+= -- 288
+> -- 205
+< -- 4
++ -- 77
+- -- 77
+* -- 241
+:= -- 525
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 52
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 112
+empty$ -- 191
+format.name$ -- 82
+if$ -- 618
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 34
+num.names$ -- 18
+pop$ -- 58
+preamble$ -- 1
+purify$ -- 59
+quote$ -- 0
+skip$ -- 91
+stack$ -- 0
+substring$ -- 119
+swap$ -- 29
+text.length$ -- 4
+text.prefix$ -- 1
+top$ -- 0
+type$ -- 44
+warning$ -- 1
+while$ -- 25
+width$ -- 10
+write$ -- 80
+(There was 1 error message)

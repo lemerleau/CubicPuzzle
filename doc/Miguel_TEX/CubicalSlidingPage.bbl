@@ -1,0 +1,41 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BMRV23}
+
+\bibitem[BMRV23]{beyer2023higher}
+Moritz Beyer, Stefano Mereta, {\'E}rika Rold{\'a}n, and Peter Voran.
+\newblock Higher-dimensional cubical sliding puzzles.
+\newblock {\em arXiv preprint arXiv:2307.14143}, 2023.
+
+\bibitem[Gol11]{goldreich2011finding}
+Oded Goldreich.
+\newblock {\em Finding the shortest move-sequence in the graph-generalized
+  15-puzzle is NP-hard}.
+\newblock Springer, 2011.
+
+\bibitem[MPL{\etalchar{+}}16]{morris2016planning}
+Robert Morris, Corina~S Pasareanu, Kasper~S{\o}e Luckow, Waqar Malik, Hang Ma,
+  TK~Satish Kumar, and Sven Koenig.
+\newblock Planning, scheduling and monitoring for airport surface operations.
+\newblock In {\em AAAI Workshop: Planning for Hybrid Systems}, pages 608--614,
+  2016.
+
+\bibitem[SSF{\etalchar{+}}19]{stern2019multi}
+Roni Stern, Nathan Sturtevant, Ariel Felner, Sven Koenig, Hang Ma, Thayne
+  Walker, Jiaoyang Li, Dor Atzmon, Liron Cohen, TK~Kumar, et~al.
+\newblock Multi-agent pathfinding: Definitions, variants, and benchmarks.
+\newblock In {\em Proceedings of the International Symposium on Combinatorial
+  Search}, volume~10, pages 151--158, 2019.
+
+\bibitem[VBCR15]{veloso2015cobots}
+Manuela Veloso, Joydeep Biswas, Brian Coltin, and Stephanie Rosenthal.
+\newblock Cobots: Robust symbiotic autonomous mobile service robots.
+\newblock In {\em Twenty-fourth international joint conference on artificial
+  intelligence}. Citeseer, 2015.
+
+\bibitem[WDM08]{wurman2008coordinating}
+Peter~R Wurman, Raffaello D'Andrea, and Mick Mountz.
+\newblock Coordinating hundreds of cooperative, autonomous vehicles in
+  warehouses.
+\newblock {\em AI magazine}, 29(1):9--9, 2008.
+
+\end{thebibliography}

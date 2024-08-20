@@ -139,7 +139,7 @@ def main():
     ring_pos = [(4, "yellow"), (1, "green"), (2, "blue"), (0, "red")]
 
     pop_0 = init_pop(args.N, ring_pos, colors)
-    
+
     # #initial population for dim = 4, rule = 3:
 
     # colors = ['blue', 'red', 'green', 'white', 'yellow', 'white', 'white', 'white', 'purple', 'white', 'white', 'white', 'white', 'white', 'white', 'white']
@@ -165,7 +165,7 @@ def main():
     plt.legend()
     plt.ylabel(r"Poputation mean fitness ($f_t$)")
     plt.xlabel("Generation(t)")
-    plt.savefig("./images/mean_fitness.pdf")
+    #plt.savefig("./images/mean_fitness.pdf")
     plt.show()
 
 

@@ -1,0 +1,324 @@
+# -*- coding: utf-8 -*-
+"""
+A* pathfinding in the puzzle graph to solve the cubical sliding puzzle problem.
+
+"""
+
+import numpy as np
+import itertools as it
+import copy as c
+import random
+
+class Move:
+    def __init__(self, row, flipIndices):
+        """
+
+        Parameters
+        ----------
+        row : int
+            The row indicating the vertex to move.
+        flipIndices : List<int>
+            The indiced to flip.
+
+        Returns
+        -------
+        None.
+
+        """
+        self.row = row
+        self.flipIndices = flipIndices
+
+    def __eq__(self, other):
+        if not isinstance(other, Move):
+            return NotImplemented
+        return self.row == other.row and self.flipIndices == other.flipIndices
+
+    def __hash__(self):
+        return hash((self.row, self.flipIndices))
+
+class NodeState:
+    def __init__(self, nodeArray, k, d = None, fcost = 0, hcost = 0, targetNodeState = None, parentNodeState = None, epsilon = 1, colorDict = None, numDict = None):
+        """
+
+
+        Parameters
+        ----------
+        nodeArray : ndarray(d, numColors)
+            Array where each colored node is a row.
+        k : TYPE
+            The k-rule to obey. (i.e, vertices can move across k-faces.)
+        fcost : TYPE, optional
+            The number of steps to reach the current nodeState from the start state. The default is 0.
+        hcost : TYPE, optional
+            The hamming distance to the target state. The default is 0.
+        targetNodeState : TYPE, optional
+            The target state. The default is None.
+
+        Returns
+        -------
+        None.
+
+        """
+        self.nodeArray = nodeArray
+        self.epsilon = epsilon
+        self.parentNodeState = parentNodeState
+        #self.hashTuple = tuple(self.nodeArray.flatten())
+        if d is None:
+            self.d = len(nodeArray[0])
+        else:
+            self.d = d
+        self.k = k
+        self.fcost = fcost
+        if colorDict == None and numDict == None:
+            self.colorDict = {
+                0 : "green",
+                1 : "purple",
+                2 : "red",
+                3 : "blue",
+                4 : "yellow",
+                5 : "orange",
+                6 : "magenta",
+                7 : "cyan",
+                8 : "brown",
+                9 : "black",
+                10: "white"
+                }
+            self.numDict = {
+                "green" : 0,
+                "purple" : 1,
+                "red" : 2,
+                "blue" : 3,
+                "yellow" : 4,
+                "orange" : 5,
+                "magenta" : 6,
+                "cyan" : 7,
+                "brown" : 8,
+                "black" : 9,
+                "white" : 10
+                }
+        else:
+            self.colorDict = colorDict
+            self.numDict = numDict
+        if type(nodeArray[0][1]) == str:
+            self.nodeArray = self.GetNodeArray(nodeArray)
+        self.hashTuple = tuple(self.nodeArray.flatten())
+        if targetNodeState != None:
+            self.hcost = self.epsilon * np.sum(np.ceil(np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray), axis = 1)/self.k))
+            #self.hcost = self.epsilon * np.sum(np.ceil(np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray), axis = 1)/3))
+            #self.hcost = 0
+            self.targetNodeState = targetNodeState
+        else:
+            self.targetNodeState = targetNodeState
+            self.hcost = self.epsilon * hcost
+        self.gcost = self.hcost + self.fcost
+
+    def __eq__(self, other):
+        if not isinstance(other, NodeState):
+            return NotImplemented
+        return (self.nodeArray == other.nodeArray).all()
+
+    def __hash__(self):
+        return hash(self.hashTuple)
+
+    def UpdateHCost(self, targetNodeState):
+        self.hcost = self.epsilon * np.sum(np.abs(targetNodeState.nodeArray - self.nodeArray))
+        self.gcost = self.fcost + (self.hcost)
+
+    def GetMoves(self):
+        """
+
+
+        Returns
+        -------
+        moveList : List<Move>
+            Valid moves for the given nodeState. See Move class for format.
+
+        """
+        moveList = []
+        faces = list(it.combinations(range(self.d), self.k))
+        for i in range(len(self.nodeArray)):
+            faceArray = np.abs(np.delete(self.nodeArray, i, axis = 0) - self.nodeArray[i])
+            for face in faces:
+                rowSumFace = np.sum(np.delete(faceArray, face, axis = 1), axis = 1)
+                if 0 not in rowSumFace:
+                    for j in range(1,self.k+1):
+                        flipIndicesList = list(it.combinations(face, j))
+                        for flipIndices in flipIndicesList:
+                            newMove = Move(i, flipIndices)
+                            if newMove not in moveList:
+                                moveList.append(newMove)
+        return moveList
+
+    def GetRandomMove(self, excludeList = []):
+
+        rowList = list(range(len(self.nodeArray)))
+        np.random.shuffle(rowList)
+        attemptThese = list(it.combinations(range(self.d), self.k))
+
+        for row in rowList:
+            np.random.shuffle(attemptThese)
+
+            faceArray = np.delete(self.nodeArray, row, axis = 0) - self.nodeArray[row]
+
+            for comb in attemptThese:
+                rowSumFace = np.sum(np.delete(faceArray, list(comb), axis = 1), axis = 1)
+
+                if 0 not in rowSumFace:
+                    j = np.random.randint(1, self.k+1)
+                    move = tuple(random.choices(comb, k = j))
+                    nextState = self.MakeMove(Move(row, move))
+
+                    if nextState not in excludeList and nextState != self:
+                        return nextState
+        return None
+
+    def MakeMove(self, move):
+        """
+
+
+        Parameters
+        ----------
+        move : Move
+            The move to make.
+
+        Returns
+        -------
+        newNodeState : NodeState
+            The NodeState resulting from the given move.
+
+        """
+        newNodeArray = c.deepcopy(self.nodeArray)
+        for i in move.flipIndices:
+            newNodeArray[move.row,i] = np.mod(newNodeArray[move.row,i] + 1, 2)
+        newNodeState = NodeState(newNodeArray, self.k, fcost = self.fcost + 1,
+                                 targetNodeState = self.targetNodeState,
+                                 parentNodeState = self, epsilon = self.epsilon,
+                                 colorDict= self.colorDict, numDict=self.numDict)
+
+        return newNodeState
+
+    def GetGameArray(self):
+        gameList = []
+        for i in range(len(self.nodeArray)):
+            out = 0
+            c = 0
+            for j in self.nodeArray[i]:
+                out += j*(2**c)
+                c += 1
+            gameList.append((out, self.colorDict[i]))
+        return gameList
+
+    def GetNodeArray(self, colorArray):
+        sortingArray = c.deepcopy(colorArray)
+
+        for i in range(len(sortingArray)):
+            sortingArray[i] = list(sortingArray[i])
+            sortingArray[i].append(self.numDict[colorArray[i][1]])
+        sortingArray.sort(key = lambda row: row[2])
+
+        colorList = [node[1] for node in sortingArray]
+        colorNums = range(len(colorList))
+        for num in colorNums:
+            self.colorDict[num] = colorList[num]
+            self.numDict[colorList[num]] = num
+        nodeArray = np.zeros((len(sortingArray), self.d))
+        for i in range(nodeArray.shape[0]):
+            for j in range(self.d):
+                if sortingArray[i][0]>=2**(self.d-j-1):
+                    sortingArray[i][0] -= 2**(self.d-j-1)
+                    nodeArray[i,self.d-j-1] = 1
+        return nodeArray
+
+
+def CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations):
+    numberOfColors = 2**d-l
+    nodeArray = np.zeros((numberOfColors, d))
+    startNodes = np.random.choice(range(2**d), numberOfColors, replace = False)
+    counter = 0
+    for i in startNodes:
+        positionBin = list("{0:b}".format(i).zfill(d))
+        nodeArray[counter] = positionBin
+        counter += 1
+    targetNodeArray = c.deepcopy(nodeArray)
+    for i in range(numberOfPermutations):
+        a, b = np.random.choice(range(len(nodeArray)), 2, replace = False)
+        targetNodeArray[[a,b]] = targetNodeArray[[b,a]]
+    targetNodeState = NodeState(targetNodeArray, k)
+    startNodeState = NodeState(nodeArray, k, targetNodeState = targetNodeState)
+    return startNodeState, targetNodeState
+
+
+def SolveCubicalSlidingPuzzle(d, k, l, numberOfPermutations = 2, startNodeArray = None, targetNodeArray = None, epsilon = 1, verbose=False):
+    """
+    Parameters
+    ----------
+    d : Int
+        The dimension of the sliding puzzle to be solved.
+    k : Int
+        The k-rule integer. For example, k=2 means points can only slide over free 2-faces.
+    l : Int
+        The number of free vertices. There will be 2^d-l colors.
+    numberOfPermutations : TYPE, optional
+        The number of permutations the starting position will undergo. The default is 2.
+    startNodeArray : TYPE, optional
+        The starting node array. Each row indicates the position of a colored vertex in the puzzle. The default is None.
+    targetNodeArray : TYPE, optional
+        The target node array. The default is None.
+
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    """
+    moveList = []
+    if type(startNodeArray) == np.ndarray and type(targetNodeArray) == np.ndarray: #Initializes specified nodestates
+        targetNodeState = NodeState(targetNodeArray, k, epsilon = epsilon)
+        startNodeState = NodeState(startNodeArray, k, targetNodeState = targetNodeState, epsilon = epsilon)
+    elif type(startNodeArray) == list and type(targetNodeArray) == list:
+        targetNodeState = NodeState(targetNodeArray, k, epsilon = epsilon, d = d)
+        startNodeState = NodeState(startNodeArray, k, targetNodeState = targetNodeState, epsilon = epsilon, d = d)
+    else:
+        startNodeState, targetNodeState = CubicalSlidingPuzzleInitialPosition(d, k, l, numberOfPermutations) #Runs code to get starting and target nodestates from random selection.
+
+    if verbose :
+        print(startNodeState.nodeArray)
+        print(targetNodeState.nodeArray)
+    if startNodeState == targetNodeState:
+        return 0
+    deadList = [startNodeState] #NodeStates in the deadList cannot be branched to.
+    openList = [startNodeState] #NodeStates in the openList can be branched from.
+    currentNodeState = startNodeState
+    while True:
+        moves = currentNodeState.GetMoves()  #retrieves all valid moves from a given nodestate
+        openList.remove(currentNodeState)
+        deadList.append(currentNodeState)
+        if currentNodeState == targetNodeState: #If the targetNodeState appears, returns the fcost to get there. This is the number of steps.
+            done = currentNodeState.parentNodeState
+            printNodeState = currentNodeState
+            while done != None:
+                moveList +=[printNodeState.GetGameArray()]
+                if verbose:
+                    print(printNodeState.GetGameArray())
+
+                printNodeState = printNodeState.parentNodeState
+                done = printNodeState
+
+            return currentNodeState.gcost, currentNodeState, moveList
+        #print(currentNodeState.nodeArray)
+        for move in moves:                               #for all moves...
+            #print(move.row, move.flipIndices)
+            newNodeState = currentNodeState.MakeMove(move) #makes the move...
+            if newNodeState not in deadList and newNodeState not in openList:
+                openList.append(newNodeState)              #If the newNodeState can be branched from, adds it as a valid open point.
+            elif newNodeState in openList:
+                if newNodeState.fcost < openList[openList.index(newNodeState)].fcost:
+                    openList.pop(openList.index(newNodeState))
+                    openList.append(newNodeState)
+        minScore = float('inf')
+        if openList == []:
+            return np.inf, None                          #If we are out of open nodes then the whole graph is dead and we cannot continue.
+        for openNodeState in openList:                     #determines the next step by selecting the node with lowest combined cost.
+            if openNodeState.gcost < minScore:
+                minScore = openNodeState.gcost
+                currentNodeState = openNodeState
