@@ -207,17 +207,10 @@ class NodeState:
                 c += 1
             gameList.append((out, self.colorDict[i]))
         return gameList
-<<<<<<< HEAD:src/as/CubicalSlidingPuzzleNew.py
 
     def GetNodeArray(self, colorArray):
         sortingArray = c.deepcopy(colorArray)
 
-=======
-
-    def GetNodeArray(self, colorArray):
-        sortingArray = c.deepcopy(colorArray)
-        print(colorArray)
->>>>>>> miguel:src/rl/CubicalSlidingPuzzleNew.py
         for i in range(len(sortingArray)):
             sortingArray[i] = list(sortingArray[i])
             sortingArray[i].append(self.numDict[colorArray[i][1]])

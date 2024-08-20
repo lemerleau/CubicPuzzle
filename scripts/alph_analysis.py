@@ -71,9 +71,10 @@ def main() :
     ax3 = ax.twinx()
     plt.plot(alpha_params, [(len(data[str(key)])/150.)*100. for key in alpha_params], "o-", color="darkorange", label="Success rate")
     plt.ylabel(r"Success rate (%)", weight="bold", fontsize=13)
+    plt.legend()
     plt.savefig("../images/success_alpha_moves.pdf")
     plt.show()
-    histo_data = data["0.8"]
+    histo_data = data["0.15"]
     print(histo_data, set(histo_data))
     figure = plt.figure(constrained_layout=True, figsize=(10,4))
     gs = figure.add_gridspec(nrows=1, ncols=1, left=0.05, right=0.48, wspace=0.05)

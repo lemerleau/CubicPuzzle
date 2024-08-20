@@ -2,6 +2,7 @@
 from uuid import uuid4
 
 from numpy import random, array, where
+import random as rnd
 import copy
 from itertools import combinations
 
@@ -18,6 +19,7 @@ class Agent(object):
         self.fitness = fitness
         self.dimension = d
         self.target = target
+        self.visited = []
 
 
     # mutating an agent means making a move
@@ -82,6 +84,7 @@ class Agent(object):
                         freenodes += fn
 
                 if len(freenodes)> 0 :
+
                     r = random.randint(0, len(freenodes))
                     moves += [(int(freenodes[r], 2), ring[-1])]
                     ring_pos [mut_pos] = (int(freenodes[r], 2), ring[-1])
@@ -95,7 +98,7 @@ class Agent(object):
         ring_pos = copy.deepcopy(self.ring_positions)
         moves = copy.deepcopy(self.move)
         ring = None
-        rdpos = random.randint(0, len(ring_pos), size=npoints)
+        rdpos = rnd.sample(range(len(ring_pos)), npoints)
 
         for i in rdpos:
             ring = ring_pos[i]
@@ -113,9 +116,15 @@ class Agent(object):
                     freenodes += fn
 
             if len(freenodes)> 0 :
+                #for node in freenodes :
+
                 r = random.randint(0, len(freenodes))
-                moves += [(int(freenodes[r], 2), ring[-1])]
-                ring_pos [mut_pos] = (int(freenodes[r], 2), ring[-1])
+                node = freenodes[r]
+                #if (int(node, 2), ring[-1]) in moves:
+                #    pass
+                moves += [(int(node, 2), ring[-1])]
+                ring_pos [mut_pos] = (int(node, 2), ring[-1])
+                #    break
 
         return Agent(None, ring_pos, self.target, None, moves, self.dimension)
 
