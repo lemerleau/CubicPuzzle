@@ -22,7 +22,7 @@ def main() :
     args = parser.parse_args()
 
     #Log folder for experiment level 2
-    root_path = args.path+"/"+str(args.dim)+"/level"+str(args.level)+"/mu/"
+    root_path = args.path+"/"+str(args.dim)+"/level"+str(args.level)+"/mulevy/"
     folders = os.listdir(root_path)
 
     print ("Folder names : ", folders)
@@ -51,15 +51,15 @@ def main() :
     print(data)
     print(generations)
 
-    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_data.json", "w") as jsonfile :
+    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_levy_data.json", "w+") as jsonfile :
         json.dump(data, jsonfile)
         jsonfile.close()
 
-    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_generation.json", "w") as jsonfile :
+    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_levy_generation.json", "w+") as jsonfile :
         json.dump(generations, jsonfile)
         jsonfile.close()
 
-    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_fitness.json", "w") as jsonfile :
+    with open("../data/dim/"+str(args.dim)+"/level"+str(args.level)+"_levy_fitness.json", "w+") as jsonfile :
         json.dump(fitnesses, jsonfile)
         jsonfile.close()
 

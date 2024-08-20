@@ -1,0 +1,286 @@
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.05
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.10
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.15
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.20
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.25
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.30
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.35
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.40
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.45
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.50
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.55
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.60
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.65
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.70
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.75
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.80
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.85
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.90
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.95
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 232, in main
+    log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~
+TypeError: can only concatenate str (not "float") to str
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 1.00
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 240, in main
+    save(data["last"],log_folder, str(t)+"_"+str(i))
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 96, in save
+    df.to_csv(root_folder +"/gen"+str(gen)+".csv")
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '../log/dim/3/level0/mubetter/0.05'
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.05
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 240, in main
+    save(data["last"],log_folder, str(t)+"_"+str(i))
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 96, in save
+    df.to_csv(root_folder +"/gen"+str(gen)+".csv")
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '../log/dim/3/level0/mubetter/0.1'
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.10
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 307, in <module>
+    main()
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 240, in main
+    save(data["last"],log_folder, str(t)+"_"+str(i))
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 96, in save
+    df.to_csv(root_folder +"/gen"+str(gen)+".csv")
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/usr/people/nonosaha/miniconda3/envs/cubicgame/lib/python3.11/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '../log/dim/3/level0/mubetter/0.15'
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.15
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.05
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.10
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.15
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.20
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.25
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.30
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.35
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.40
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.45
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.50
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.55
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.60
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.65
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.70
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.75
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.80
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.85
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.90
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 0.95
+./run_mu.sh: line 7: alph_analysis.py: command not found
+solved for mu=: 1.00

@@ -5,6 +5,7 @@ from uuid import uuid4
 from numpy import random, array, where
 import copy
 from itertools import combinations
+import random as rnd 
 
 
 class Agent(object):
@@ -86,6 +87,35 @@ class Agent(object):
                     r = random.randint(0, len(freenodes))
                     moves += [(int(freenodes[r], 2), ring[-1])]
                     ring_pos [mut_pos] = (int(freenodes[r], 2), ring[-1])
+
+        return Agent(None, ring_pos, self.target, None, moves, self.dimension)
+    
+    def levy_mutate(self, npoints, k) :
+
+        ring_pos = copy.deepcopy(self.ring_positions)
+        moves = copy.deepcopy(self.move)
+        ring = None
+        rdpos = rnd.sample(range(len(ring_pos)), npoints)
+
+        for i in rdpos:
+            ring = ring_pos[i]
+            mut_pos = i
+
+            format_str = '{0:0'+str(self.dimension)+'b}'
+            node =  ring[0]
+
+            node_bin = format_str.format(node)
+            faces = getFaces(node_bin, k)
+            freenodes = []
+            for face in faces :
+                fn = getFreeNodes(face, node_bin, ring_pos, self.dimension)
+                if fn:
+                    freenodes += fn
+
+            if len(freenodes)> 0 :
+                r = random.randint(0, len(freenodes))
+                moves += [(int(freenodes[r], 2), ring[-1])]
+                ring_pos [mut_pos] = (int(freenodes[r], 2), ring[-1])
 
         return Agent(None, ring_pos, self.target, None, moves, self.dimension)
 

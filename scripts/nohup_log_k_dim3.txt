@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 7, in <module>
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 7, in <module>
+    from multiprocess import Pool, cpu_count
+ModuleNotFoundError: No module named 'multiprocess'
+    from multiprocess import Pool, cpu_count
+ModuleNotFoundError: No module named 'multiprocess'
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 7, in <module>
+    from multiprocess import Pool, cpu_count
+ModuleNotFoundError: No module named 'multiprocess'
+solved for k=: 1
+solved for k=: 1
+solved for k=: 1
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 7, in <module>
+    from multiprocess import Pool, cpu_count
+ModuleNotFoundError: No module named 'multiprocess'
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 7, in <module>
+    from multiprocess import Pool, cpu_count
+ModuleNotFoundError: No module named 'multiprocess'
+Traceback (most recent call last):
+  File "/net/st1/export/clusterhome/nonosaha/PythonCodes/CubicPuzzle/scripts/../src/main.py", line 7, in <module>
+    from multiprocess import Pool, cpu_count
+ModuleNotFoundError: No module named 'multiprocess'
+solved for k=: 2
+solved for k=: 2
+solved for k=: 2
+solved for k=: 1
+solved for k=: 1
+solved for k=: 1
+solved for k=: 2
+solved for k=: 2
+solved for k=: 2

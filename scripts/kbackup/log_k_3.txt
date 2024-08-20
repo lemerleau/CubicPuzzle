@@ -1,0 +1,76 @@
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'purple'), (5, 'yellow'), (7, 'blue'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=3...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'yellow'), (5, 'red'), (7, 'blue'), (13, 'purple')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=2...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'yellow'), (5, 'blue'), (7, 'purple'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=0...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'purple'), (1, 'yellow'), (5, 'green'), (7, 'blue'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=1...
+Please, wait for few minutes....
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=0...
+***********************************************************************************************
+Success rate: 0.02
+Median number of moves: 14.0
+Number of moves table: [13, 14, 19]
+Best agent move set:  [['10', 'green'], ['12', 'green'], ['10', 'purple'], ['15', 'purple'], ['8', 'yellow'], ['4', 'blue'], ['14', 'purple'], ['2', 'yellow'], ['5', 'red'], ['1', 'yellow'], ['7', 'purple'], ['9', 'green'], ['13', 'green']]
+Best agent ring positions:  [(13, 'green'), (1, 'yellow'), (4, 'blue'), (7, 'purple'), (5, 'red')]
+Min number of moves:  13
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=1...
+***********************************************************************************************
+Success rate: 0.006666666666666667
+Median number of moves: 21.0
+Number of moves table: [21]
+Best agent move set:  [['10', 'red'], ['14', 'red'], ['0', 'yellow'], ['8', 'red'], ['12', 'red'], ['14', 'blue'], ['15', 'green'], ['9', 'yellow'], ['5', 'purple'], ['7', 'purple'], ['2', 'yellow'], ['1', 'yellow'], ['11', 'yellow'], ['5', 'red'], ['0', 'yellow'], ['1', 'yellow'], ['4', 'blue'], ['9', 'green'], ['11', 'green'], ['14', 'green'], ['13', 'green']]
+Best agent ring positions:  [(7, 'purple'), (1, 'yellow'), (13, 'green'), (4, 'blue'), (5, 'red')]
+Min number of moves:  21
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=2...
+***********************************************************************************************
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=3...
+***********************************************************************************************
+**************************************************

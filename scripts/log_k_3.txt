@@ -1,0 +1,168 @@
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'yellow'), (5, 'red'), (7, 'blue'), (13, 'purple')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=2...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'yellow'), (5, 'blue'), (7, 'purple'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=0...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'purple'), (5, 'yellow'), (7, 'blue'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=3...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'purple'), (1, 'yellow'), (5, 'green'), (7, 'blue'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=1...
+Please, wait for few minutes....
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=1...
+***********************************************************************************************
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=2...
+***********************************************************************************************
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=0...
+***********************************************************************************************
+Success rate: 0.10666666666666667
+Median number of moves: 12.0
+Number of moves table: [9, 9, 11, 11, 11, 11, 11, 12, 12, 12, 13, 14, 15, 15, 15, 18]
+Best agent move set:  [['10', 'green'], ['12', 'green'], ['14', 'purple'], ['10', 'yellow'], ['4', 'blue'], ['5', 'red'], ['1', 'yellow'], ['7', 'purple'], ['13', 'green']]
+Best agent ring positions:  [(13, 'green'), (1, 'yellow'), (4, 'blue'), (7, 'purple'), (5, 'red')]
+Min number of moves:  9
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=3...
+***********************************************************************************************
+**************************************************
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'yellow'), (5, 'red'), (7, 'blue'), (13, 'purple')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=2...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'purple'), (5, 'red'), (7, 'yellow'), (13, 'blue')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=4...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'yellow'), (5, 'blue'), (7, 'purple'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=0...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'green'), (1, 'purple'), (5, 'yellow'), (7, 'blue'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=3...
+Please, wait for few minutes....
+***********************************************************************************************
+           Evolutionary algorithm for solving the sliding puzzle           
+***********************************************************************************************
+Initial ring positions:  [(4, 'purple'), (1, 'yellow'), (5, 'green'), (7, 'blue'), (13, 'red')]
+Initialisation of the population of agents.....
+Initialisation done.
+Solving the sliding puzzle for d=4,  k=3, level=1...
+Please, wait for few minutes....
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=0...
+***********************************************************************************************
+Success rate: 0.02
+Median number of moves: 36.0
+Number of moves table: [23, 36, 188]
+Best agent move set:  [['11', 'yellow'], ['1', 'yellow'], ['11', 'red'], ['13', 'red'], ['14', 'green'], ['6', 'green'], ['12', 'green'], ['15', 'purple'], ['8', 'yellow'], ['4', 'blue'], ['7', 'purple'], ['10', 'yellow'], ['2', 'yellow'], ['1', 'yellow'], ['11', 'purple'], ['6', 'purple'], ['2', 'yellow'], ['5', 'red'], ['13', 'green'], ['9', 'yellow'], ['15', 'purple'], ['7', 'purple'], ['1', 'yellow']]
+Best agent ring positions:  [(13, 'green'), (1, 'yellow'), (4, 'blue'), (7, 'purple'), (5, 'red')]
+Min number of moves:  23
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=4...
+***********************************************************************************************
+Success rate: 0.06
+Median number of moves: 310.0
+Number of moves table: [84, 143, 157, 279, 310, 392, 449, 520, 607]
+Best agent move set:  [['2', 'yellow'], ['6', 'yellow'], ['14', 'blue'], ['13', 'blue'], ['15', 'yellow'], ['11', 'yellow'], ['14', 'green'], ['2', 'green'], ['10', 'green'], ['8', 'green'], ['14', 'yellow'], ['6', 'yellow'], ['3', 'yellow'], ['14', 'green'], ['12', 'green'], ['10', 'yellow'], ['11', 'yellow'], ['2', 'yellow'], ['11', 'yellow'], ['10', 'yellow'], ['7', 'yellow'], ['14', 'yellow'], ['3', 'purple'], ['10', 'purple'], ['9', 'purple'], ['11', 'purple'], ['9', 'purple'], ['11', 'yellow'], ['6', 'green'], ['4', 'green'], ['3', 'yellow'], ['15', 'yellow'], ['11', 'purple'], ['14', 'green'], ['3', 'purple'], ['8', 'green'], ['10', 'green'], ['0', 'green'], ['12', 'green'], ['10', 'green'], ['6', 'green'], ['8', 'purple'], ['3', 'purple'], ['14', 'green'], ['2', 'purple'], ['10', 'purple'], ['8', 'purple'], ['10', 'purple'], ['0', 'purple'], ['2', 'purple'], ['10', 'purple'], ['2', 'red'], ['8', 'blue'], ['1', 'yellow'], ['13', 'green'], ['7', 'green'], ['13', 'green'], ['5', 'green'], ['13', 'green'], ['6', 'green'], ['13', 'green'], ['5', 'green'], ['15', 'green'], ['13', 'green'], ['12', 'green'], ['9', 'yellow'], ['13', 'green'], ['4', 'red'], ['2', 'purple'], ['3', 'purple'], ['2', 'purple'], ['6', 'purple'], ['2', 'purple'], ['7', 'purple'], ['2', 'purple'], ['7', 'purple'], ['3', 'purple'], ['11', 'purple'], ['5', 'red'], ['7', 'purple'], ['6', 'blue'], ['11', 'yellow'], ['4', 'blue'], ['1', 'yellow']]
+Best agent ring positions:  [(13, 'green'), (7, 'purple'), (5, 'red'), (1, 'yellow'), (4, 'blue')]
+Min number of moves:  84
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=1...
+***********************************************************************************************
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=2...
+***********************************************************************************************
+**************************************************
+done.
+***********************************************************************************************
+
+
+***********************************************************************************************
+Result for d=4,  k=3, level=3...
+***********************************************************************************************
+Success rate: 0.02666666666666667
+Median number of moves: 79.0
+Number of moves table: [29, 48, 110, 346]
+Best agent move set:  [['15', 'red'], ['8', 'purple'], ['11', 'purple'], ['0', 'green'], ['10', 'green'], ['1', 'yellow'], ['2', 'green'], ['9', 'yellow'], ['4', 'green'], ['8', 'green'], ['0', 'blue'], ['5', 'red'], ['15', 'purple'], ['7', 'purple'], ['3', 'purple'], ['14', 'purple'], ['7', 'purple'], ['14', 'purple'], ['2', 'purple'], ['7', 'red'], ['14', 'red'], ['1', 'yellow'], ['5', 'red'], ['14', 'purple'], ['7', 'purple'], ['14', 'green'], ['13', 'green'], ['2', 'blue'], ['4', 'blue']]
+Best agent ring positions:  [(13, 'green'), (7, 'purple'), (1, 'yellow'), (4, 'blue'), (5, 'red')]
+Min number of moves:  29
+**************************************************

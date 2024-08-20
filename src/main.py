@@ -8,7 +8,7 @@ from multiprocess import Pool, cpu_count
 import os
 from datetime import datetime
 from scipy.spatial.distance import hamming
-
+from utility import gen_point_mutation_dist
 
 
 
@@ -69,10 +69,15 @@ def eletebetter(pop, size):
     return [Agent.Agent(parent.graph, parent.ring_positions, parent.target, parent.fitness, parent.move, parent.dimension) for parent in pop[:size]]
 
 
-def mutate_all(pop, rate, k) :
+def mutate_all(pop, rate, k, levy=False) :
     mutated_pop = []
-    for agent in pop :
-        mutated_pop += [agent.mutatebetter(rate, k)]
+    if levy:
+        dist = gen_point_mutation_dist(len(pop), rate,len(pop[0].ring_positions))
+        for i, agent in enumerate(pop) :
+            mutated_pop += [agent.levy_mutate(dist[i], k)]
+    else :
+        for agent in pop :
+            mutated_pop += [agent.mutatebetter(rate, k)]
 
     return mutated_pop
 
@@ -80,9 +85,9 @@ def evaluate(pop) :
     for agent in pop :
         agent.evaluate_fitnessbetter()
 
-def select(pop, size) :
+def select(pop, size, alpha=0.2) :
 
-    fitnesses = np.array([agent.selection_force(alpha=0.7) for agent in pop])
+    fitnesses = np.array([agent.selection_force(alpha) for agent in pop])
     probs = fitnesses/sum(fitnesses)
     parents = np.random.choice(pop, size=size, p=probs)
 
@@ -108,8 +113,8 @@ def evolution(params) :
 
         #print("Pop", [agent.ring_positions for agent in pop_t])
         bests = eletebetter(pop_t, int(0.1*len(pop_t)))
-        selected = select(pop_t, len(pop_t)-int(0.1*len(pop_t)))
-        pop_t = mutate_all(selected, params["mu"], params['k']) + bests
+        selected = select(pop_t, len(pop_t)-int(0.1*len(pop_t)), params['alpha'])
+        pop_t = mutate_all(selected, params["mu"], params['k'], params['levy']) + bests
         evaluate(pop_t)
 
         mean_ = np.mean([agent.fitness for agent in pop_t])
@@ -210,17 +215,18 @@ def main():
         "pop": init_pop(args.N, ring_pos, target, args.dim),
         "mu" : args.mu,
         "T" : args.T,
-        "N" : args.alpha,
+        "N" : args.N,
         "job_id": i,
         "verbose": args.print,
         "alpha": args.alpha,
         'k': k,
-        "target": target
+        "target": target, 
+        "levy": True
         }]
 
 
 
-    print("Solving the puzzle....")
+    print(f"Solving the sliding puzzle for d={args.dim},  k={args.k}, level={args.level}...")
     print("Please, wait for few minutes....")
 
     pool = Pool(cpu_count())
@@ -229,7 +235,8 @@ def main():
     best_agents = []
     if args.store:
         #log_folder = str(datetime.now()).replace(" ", "") + '/'
-        log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mu/"+(args.mu)+ '/'
+        log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/alpha/"+str(args.alpha)+ '/'
+        #log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mulevy/"+str(args.mu)+ '/'
         try:
             os.mkdir(log_folder)
         except Exception as e:
@@ -239,21 +246,26 @@ def main():
             data, t = result[i]
             save(data["last"],log_folder, str(t)+"_"+str(i))
 
-
-    for i in range(args.job):
-        data, t = result[i]
-        if data['best'].fitness == 1 :
-            best_agents += [data["best"]]
+            if data['best'].fitness == 1 : 
+                best_agents += [data['best']]
+    else : 
+        
+        for i in range(args.job):
+            data, t = result[i]
+            if data['best'].fitness == 1 :
+                best_agents += [data["best"]]
     print("done.")
     print("*"*95)
     print("\n")
     print("*"*95)
-    print("Results")
+    print(f"Result for d={args.dim},  k={args.k}, level={args.level}...")
     print("*"*95)
 
     if len(best_agents) > 0 :
-        best_agents.sort(key=lambda a : len(a.move) == 10)
-
+        best_agents.sort(key=lambda a : len(a.move))
+        print(f"Success rate: {len(best_agents)/args.job}")
+        print(f"Median number of moves: {np.median([len(agent.move) for agent in best_agents])}")
+        print(f"Number of moves table: {[len(a.move) for a in best_agents]}")
         print("Best agent move set: ", np.array(best_agents[0].move).tolist())
         print("Best agent ring positions: ", best_agents[0].ring_positions)
         print("Min number of moves: ", len(best_agents[0].move))
