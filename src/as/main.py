@@ -2,7 +2,7 @@
 import numpy as np
 import time
 from utils import *
-import CubicalSlidingPuzzleNew as csp
+from cubicgame.common import CubicalSlidingPuzzleNew as csp
 import argparse
 import pandas as pd
 from multiprocess import Pool, cpu_count

@@ -88,7 +88,7 @@ def select(pop, size, alpha=0.2) :
     Returns:
         list<Agent>: Population of agents
     """
-    fitnesses = array([exp(agent.selection_force(alpha)) for agent in pop])
+    fitnesses = array([agent.selection_force(alpha) for agent in pop])
     probs = fitnesses/sum(fitnesses)
     parents = choice(pop, size=size, p=probs)
 

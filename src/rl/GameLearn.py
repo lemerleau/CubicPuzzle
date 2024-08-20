@@ -9,10 +9,10 @@ import numpy as np
 import copy
 
 class State:
-    def __init__(self, stateData, nextStateRule, determineWinnerRule, 
+    def __init__(self, stateData, nextStateRule, determineWinnerRule,
                  stateSpace, lastState = None, permitRepeatedStates = True):
         """
-        
+
 
         Parameters
         ----------
@@ -22,7 +22,7 @@ class State:
         nextStateRule : Function(State) returns list<State>
             Function which takes State and returns valid nextStates.
         determineWinnerRule : Function(state) returns Bool
-            Function determining whether a state is winning. Returns True if 
+            Function determining whether a state is winning. Returns True if
             win, False if loss, None if neither.
         stateSpace : StateSpace
             Dictionary of states and weights to be updated after outcomes.
@@ -43,19 +43,19 @@ class State:
         self.winState = self.determineWinnerRule(self)
         self.permitRepeatedStates = permitRepeatedStates
         self.nextStates = None
-        
-    def __eq__(self, other): 
+
+    def __eq__(self, other):
         if not isinstance(other, State):
             return NotImplemented
         return self.stateData == other.stateData
-    
+
     def __hash__(self):
         return hash(self.stateData)
-    
+
     def GetNextState(self):
         if self.nextStates is None:
             self.nextStates = self.nextStateRule(self)
-            self.nextStateWeights = [self.stateSpace.GetWeight(state) 
+            self.nextStateWeights = [self.stateSpace.GetWeight(state)
                                      for state in self.nextStates]
         if sum(self.nextStateWeights) == 0:
             if self.permitRepeatedStates:
@@ -63,23 +63,23 @@ class State:
             else:
                 self.winState = False
                 return self
-        nextStateIndex = random.choices(range(len(self.nextStateWeights)), 
+        nextStateIndex = random.choices(range(len(self.nextStateWeights)),
                                         self.nextStateWeights)[0]
         nextState = self.nextStates[nextStateIndex]
         if self.permitRepeatedStates == False:
             self.nextStateWeights[nextStateIndex] = 0
         return nextState
-    
+
     def SetStateSpace(self, stateSpace):
         self.stateSpace = stateSpace
-        
+
     def NewState(self, stateData):
-        newState = State(stateData, self.nextStateRule, 
-                         self.determineWinnerRule, 
-                         self.stateSpace, lastState = self, 
+        newState = State(stateData, self.nextStateRule,
+                         self.determineWinnerRule,
+                         self.stateSpace, lastState = self,
                          permitRepeatedStates = self.permitRepeatedStates)
         return newState
-    
+
     def ExpandTarget(self):
         stateList = []
         self.nextStates = self.nextStateRule(self)
@@ -88,10 +88,10 @@ class State:
                 self.stateSpace.AdjustWeight(state, self.stateSpace.GetWeight(self)/2)
                 stateList.append(state)
         return stateList
-    
+
     def UpdateWinState(self):
         self.winState = self.determineWinnerRule(self)
-                
+
 
 class StateSpace:
     def __init__(self, learningRate = .05):
@@ -102,17 +102,17 @@ class StateSpace:
         self.optimalShifts = []
         self.runs = 0
         self.moves = 0
-    
+
     def GetWeight(self, state):
         if state in self.stateWeights:
             return self.stateWeights[state]
         else:
             self.stateWeights[state] = .0000001
             return .0000001
-    
+
     def AdjustWeight(self, state, newWeight):
         self.stateWeights[state] = newWeight
-    
+
     def UpdateWeights(self, win, endState):
         self.runs += 1
         self.moves = 0
@@ -140,24 +140,24 @@ class Player:
         self.stateSpace = StateSpace(learningRate = learningRate)
         self.lastState = None
         self.wins = 0
-        
+
     def MakeMove(self, state):
         state.stateSpace = self.stateSpace
         state.lastState = self.lastState
         self.lastState = state
         return state.GetNextState()
-    
+
     def AdjustWeights(self, win, endState):
         self.stateSpace.UpdateWeights(win, endState)
-            
+
 def RunGameLearn(startStateData, nextStateRule, determineWinnerRule, iterations,
                  learningRate = .05, permitRepeatedStates = True, stateSpace = None, targetStateData = None, initializationSize = 0):
-    
+
     if stateSpace == None:
         stateSpace = StateSpace(learningRate = learningRate)
     else:
         stateSpace = stateSpace
-        
+
     if targetStateData != None:
         targetState = State(targetStateData, nextStateRule, determineWinnerRule,
                            stateSpace, permitRepeatedStates = permitRepeatedStates)
@@ -166,12 +166,12 @@ def RunGameLearn(startStateData, nextStateRule, determineWinnerRule, iterations,
 
         stateList = [targetState]
         while len(stateSpace.stateWeights.keys()) < initializationSize:
-            print(len(stateSpace.stateWeights.keys()))
+            #print(len(stateSpace.stateWeights.keys()))
             newStates = []
             for state in stateList:
                 newStates += state.ExpandTarget()
             stateList = newStates
-                
+
     stateSpace.optimal = np.inf
     stateSpace.optimalShifts = []
     for i in range(iterations):
@@ -184,10 +184,10 @@ def RunGameLearn(startStateData, nextStateRule, determineWinnerRule, iterations,
             candidateState = currentState.GetNextState()
             currentState = candidateState
             stateSpace.moves += 1
-            if candidateState != currentState:  
+            if candidateState != currentState:
                 currentState.UpdateWinState()
-            print(currentState.stateData.nodeArray)
-            print(currentState.winState)
+            #print(currentState.stateData.nodeArray)
+            #print(currentState.winState)
         stateSpace.UpdateWeights(currentState.winState, currentState)
         currentState.winState = None
         #print(stateSpace.stateWeights.values())
@@ -195,9 +195,9 @@ def RunGameLearn(startStateData, nextStateRule, determineWinnerRule, iterations,
          #   break
     return stateSpace
 
-        
-def RunTournament(startStateData, nextStateRule, scoreRule, determineWinnerRule, 
-                  tournaments, players, learningRate = .05, 
+
+def RunTournament(startStateData, nextStateRule, scoreRule, determineWinnerRule,
+                  tournaments, players, learningRate = .05,
                   permitRepeatedStates = True, stateSpace = None):
     playerList = [Player(learningRate) for i in range(players)]
     for t in range(tournaments):
@@ -216,12 +216,12 @@ def RunTournament(startStateData, nextStateRule, scoreRule, determineWinnerRule,
             if state.winState != None:
                 if players[turn].score > players[np.mod(turn + 1, 2)].score:
                     players[turn].AdjustWeights(True, state)
-                    players[np.mod(turn + 1, 2)].AdjustWeights(False, 
+                    players[np.mod(turn + 1, 2)].AdjustWeights(False,
                                                                players[np.mod(turn + 1, 2)].lastState)
                     players[turn].wins += 1
                 if players[turn].score < players[np.mod(turn + 1, 2)].score:
                     players[turn].AdjustWeights(False, state)
-                    players[np.mod(turn + 1, 2)].AdjustWeights(True, 
+                    players[np.mod(turn + 1, 2)].AdjustWeights(True,
                                                                players[np.mod(turn + 1, 2)].lastState)
                     players[np.mod(turn + 1, 2)].wins += 1
     return playerList
