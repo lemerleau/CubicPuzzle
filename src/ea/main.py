@@ -263,7 +263,7 @@ def main():
         data, t = result[j]
         successful_agents = [agent for agent in data['last'] if agent.fitness == 1]
         if len(successful_agents)>0 :
-            print(j)
+            #print(j)
             successful_agents.sort(key=lambda a : len(a.move))
             best_agents += [successful_agents[0]]
             #if data['best'].fitness == 1 :
