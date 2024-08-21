@@ -1,0 +1,151 @@
+,d,k,l,t,level,Min,Moves,CPU Time
+0,3,1,4,11,2,12,"[(0, 'red'), (4, 'green'), (2, 'purple'), (3, 'blue'), (1, 'red'), (0, 'purple'), (2, 'blue'), (5, 'red'), (3, 'blue'), (2, 'blue'), (6, 'blue'), (1, 'purple')]",1.5913431644439697
+1,3,1,4,9,2,10,"[(0, 'blue'), (2, 'blue'), (0, 'red'), (4, 'green'), (7, 'purple'), (1, 'red'), (6, 'blue'), (5, 'red'), (3, 'purple'), (1, 'purple')]",1.4550018310546875
+2,3,1,4,11,2,12,"[(7, 'green'), (5, 'red'), (2, 'purple'), (6, 'green'), (3, 'purple'), (4, 'green'), (0, 'blue'), (7, 'red'), (1, 'purple'), (5, 'red'), (2, 'blue'), (6, 'blue')]",1.921250820159912
+3,3,1,4,10,2,12,"[(2, 'purple'), (7, 'green'), (3, 'purple'), (5, 'red'), (0, 'blue'), (6, 'green'), (1, 'purple'), (2, 'green'), (4, 'blue'), (6, 'blue'), (0, 'green'), (4, 'green')]",1.4583008289337158
+4,3,1,4,12,2,16,"[(0, 'red'), (4, 'purple'), (3, 'blue'), (6, 'purple'), (1, 'red'), (7, 'purple'), (4, 'green'), (2, 'blue'), (5, 'red'), (3, 'purple'), (0, 'blue'), (1, 'purple'), (7, 'red'), (2, 'blue'), (6, 'blue'), (5, 'red')]",1.9127326011657715
+5,3,1,4,9,2,14,"[(7, 'purple'), (6, 'red'), (3, 'purple'), (4, 'red'), (7, 'purple'), (0, 'blue'), (1, 'green'), (3, 'purple'), (5, 'red'), (4, 'blue'), (0, 'green'), (1, 'purple'), (6, 'blue'), (4, 'green')]",1.2488429546356201
+6,3,1,4,13,2,12,"[(0, 'red'), (4, 'green'), (3, 'blue'), (1, 'red'), (7, 'blue'), (2, 'purple'), (3, 'red'), (6, 'blue'), (0, 'purple'), (1, 'red'), (5, 'red'), (1, 'purple')]",2.0220494270324707
+7,3,1,4,12,2,14,"[(2, 'purple'), (3, 'purple'), (0, 'blue'), (7, 'green'), (5, 'red'), (1, 'purple'), (4, 'blue'), (6, 'green'), (0, 'blue'), (7, 'red'), (2, 'blue'), (4, 'green'), (6, 'blue'), (5, 'red')]",1.7342948913574219
+8,3,1,4,8,2,10,"[(7, 'green'), (2, 'purple'), (5, 'red'), (3, 'blue'), (6, 'green'), (7, 'blue'), (4, 'green'), (0, 'purple'), (1, 'purple'), (6, 'blue')]",1.0547845363616943
+9,3,1,4,10,2,10,"[(0, 'blue'), (7, 'purple'), (6, 'red'), (2, 'blue'), (3, 'purple'), (7, 'red'), (1, 'purple'), (4, 'green'), (5, 'red'), (6, 'blue')]",1.4182217121124268
+10,3,1,4,10,2,10,"[(3, 'blue'), (7, 'green'), (5, 'red'), (2, 'purple'), (6, 'green'), (4, 'green'), (7, 'blue'), (0, 'purple'), (6, 'blue'), (1, 'purple')]",1.3701262474060059
+11,3,1,4,8,2,14,"[(0, 'red'), (4, 'green'), (2, 'red'), (3, 'blue'), (7, 'purple'), (6, 'red'), (2, 'blue'), (0, 'green'), (3, 'purple'), (4, 'red'), (5, 'red'), (6, 'blue'), (4, 'green'), (1, 'purple')]",1.0464410781860352
+12,3,1,4,8,2,10,"[(0, 'blue'), (7, 'green'), (5, 'red'), (4, 'purple'), (2, 'blue'), (6, 'green'), (0, 'purple'), (1, 'purple'), (4, 'green'), (6, 'blue')]",1.0700194835662842
+13,3,1,4,9,2,10,"[(2, 'purple'), (3, 'purple'), (0, 'blue'), (7, 'green'), (5, 'red'), (2, 'blue'), (6, 'green'), (1, 'purple'), (4, 'green'), (6, 'blue')]",1.2147395610809326
+14,3,1,4,12,2,10,"[(3, 'blue'), (2, 'purple'), (7, 'green'), (5, 'red'), (6, 'green'), (7, 'blue'), (0, 'purple'), (4, 'green'), (1, 'purple'), (6, 'blue')]",1.8137180805206299
+15,3,1,4,9,2,10,"[(7, 'green'), (3, 'blue'), (5, 'red'), (2, 'purple'), (0, 'purple'), (6, 'green'), (7, 'blue'), (4, 'green'), (1, 'purple'), (6, 'blue')]",1.2741005420684814
+16,3,1,4,10,2,10,"[(2, 'purple'), (0, 'blue'), (3, 'purple'), (2, 'blue'), (6, 'red'), (4, 'green'), (7, 'red'), (1, 'purple'), (6, 'blue'), (5, 'red')]",1.5339314937591553
+17,3,1,4,9,2,14,"[(0, 'blue'), (1, 'blue'), (7, 'green'), (2, 'purple'), (0, 'blue'), (6, 'red'), (5, 'green'), (4, 'blue'), (7, 'red'), (6, 'blue'), (4, 'green'), (5, 'red'), (3, 'purple'), (1, 'purple')]",1.2019343376159668
+18,3,1,4,9,2,14,"[(7, 'purple'), (3, 'purple'), (0, 'blue'), (2, 'purple'), (7, 'green'), (3, 'green'), (1, 'green'), (3, 'purple'), (5, 'red'), (2, 'blue'), (0, 'green'), (6, 'blue'), (1, 'purple'), (4, 'green')]",1.2461535930633545
+19,3,1,4,11,2,12,"[(0, 'blue'), (1, 'green'), (5, 'red'), (4, 'blue'), (7, 'purple'), (0, 'green'), (6, 'blue'), (3, 'purple'), (4, 'green'), (1, 'purple'), (7, 'red'), (5, 'red')]",1.5187084674835205
+20,3,1,4,9,2,12,"[(7, 'purple'), (3, 'purple'), (7, 'purple'), (0, 'blue'), (6, 'red'), (3, 'purple'), (2, 'blue'), (7, 'red'), (1, 'purple'), (4, 'green'), (6, 'blue'), (5, 'red')]",1.2072889804840088
+21,3,1,4,10,2,12,"[(0, 'red'), (3, 'blue'), (1, 'red'), (2, 'purple'), (4, 'green'), (0, 'purple'), (2, 'purple'), (0, 'purple'), (5, 'red'), (2, 'blue'), (1, 'purple'), (6, 'blue')]",1.9800209999084473
+22,3,1,4,8,2,10,"[(2, 'purple'), (3, 'blue'), (6, 'red'), (0, 'purple'), (2, 'blue'), (7, 'red'), (4, 'green'), (6, 'blue'), (1, 'purple'), (5, 'red')]",1.081049919128418
+23,3,1,4,7,2,10,"[(7, 'green'), (2, 'purple'), (6, 'green'), (5, 'red'), (3, 'blue'), (0, 'purple'), (2, 'blue'), (4, 'green'), (6, 'blue'), (1, 'purple')]",0.9409897327423096
+24,3,1,4,11,2,12,"[(0, 'red'), (7, 'purple'), (3, 'blue'), (4, 'green'), (2, 'blue'), (3, 'purple'), (1, 'red'), (6, 'blue'), (2, 'purple'), (5, 'red'), (3, 'purple'), (1, 'purple')]",1.6104764938354492
+25,3,1,4,9,2,10,"[(7, 'purple'), (6, 'red'), (0, 'blue'), (3, 'purple'), (2, 'blue'), (7, 'red'), (4, 'green'), (5, 'red'), (6, 'blue'), (1, 'purple')]",1.2347705364227295
+26,3,1,4,11,2,12,"[(3, 'blue'), (0, 'red'), (4, 'red'), (7, 'purple'), (1, 'green'), (2, 'blue'), (5, 'red'), (3, 'purple'), (0, 'green'), (1, 'purple'), (6, 'blue'), (4, 'green')]",1.7339591979980469
+27,3,1,4,9,2,10,"[(0, 'blue'), (2, 'blue'), (0, 'red'), (7, 'purple'), (4, 'green'), (1, 'red'), (6, 'blue'), (3, 'purple'), (5, 'red'), (1, 'purple')]",1.3013794422149658
+28,3,1,4,10,2,16,"[(2, 'purple'), (6, 'red'), (0, 'blue'), (3, 'purple'), (2, 'red'), (7, 'green'), (1, 'purple'), (6, 'green'), (3, 'red'), (4, 'green'), (2, 'blue'), (7, 'red'), (5, 'red'), (0, 'green'), (4, 'green'), (6, 'blue')]",1.4713270664215088
+29,3,1,4,10,2,10,"[(0, 'blue'), (1, 'green'), (5, 'red'), (2, 'purple'), (4, 'blue'), (6, 'blue'), (0, 'green'), (3, 'purple'), (4, 'green'), (1, 'purple')]",1.6286275386810303
+30,3,1,4,12,2,12,"[(3, 'blue'), (1, 'green'), (7, 'purple'), (2, 'blue'), (6, 'blue'), (5, 'red'), (3, 'purple'), (4, 'blue'), (0, 'green'), (6, 'blue'), (4, 'green'), (1, 'purple')]",1.7831332683563232
+31,3,1,4,10,2,10,"[(7, 'green'), (2, 'purple'), (5, 'red'), (3, 'blue'), (6, 'green'), (7, 'blue'), (4, 'green'), (0, 'purple'), (1, 'purple'), (6, 'blue')]",1.3658232688903809
+32,3,1,4,9,2,14,"[(7, 'green'), (2, 'purple'), (3, 'blue'), (6, 'red'), (4, 'red'), (0, 'purple'), (5, 'red'), (1, 'purple'), (6, 'green'), (0, 'purple'), (2, 'blue'), (1, 'purple'), (4, 'green'), (6, 'blue')]",1.4033405780792236
+33,3,1,4,8,2,12,"[(2, 'purple'), (3, 'blue'), (6, 'purple'), (0, 'red'), (2, 'purple'), (4, 'green'), (7, 'blue'), (3, 'purple'), (1, 'red'), (5, 'red'), (6, 'blue'), (1, 'purple')]",1.097428798675537
+34,3,1,4,12,2,10,"[(0, 'blue'), (1, 'green'), (2, 'blue'), (0, 'green'), (7, 'purple'), (5, 'red'), (4, 'green'), (3, 'purple'), (1, 'purple'), (6, 'blue')]",1.8631184101104736
+35,3,1,4,11,2,12,"[(7, 'purple'), (3, 'blue'), (1, 'green'), (5, 'red'), (0, 'green'), (6, 'purple'), (4, 'green'), (2, 'purple'), (7, 'blue'), (0, 'purple'), (6, 'blue'), (1, 'purple')]",1.738907814025879
+36,3,1,4,9,2,10,"[(7, 'green'), (2, 'purple'), (5, 'red'), (0, 'purple'), (3, 'blue'), (6, 'green'), (4, 'green'), (2, 'blue'), (6, 'blue'), (1, 'purple')]",1.2399468421936035
+37,3,1,4,10,2,12,"[(7, 'green'), (2, 'purple'), (3, 'blue'), (0, 'red'), (1, 'red'), (6, 'green'), (4, 'green'), (0, 'purple'), (5, 'red'), (7, 'blue'), (1, 'purple'), (6, 'blue')]",1.4246907234191895
+38,3,1,4,10,2,12,"[(0, 'blue'), (2, 'blue'), (7, 'purple'), (6, 'red'), (3, 'purple'), (4, 'green'), (7, 'red'), (6, 'blue'), (0, 'green'), (5, 'red'), (1, 'purple'), (4, 'green')]",1.4855320453643799
+39,3,1,4,9,2,12,"[(2, 'purple'), (7, 'green'), (0, 'blue'), (3, 'purple'), (2, 'blue'), (6, 'green'), (5, 'red'), (1, 'purple'), (4, 'green'), (3, 'blue'), (7, 'blue'), (6, 'blue')]",1.2967863082885742
+40,3,1,4,12,2,10,"[(0, 'red'), (4, 'green'), (5, 'blue'), (7, 'blue'), (2, 'purple'), (3, 'purple'), (6, 'blue'), (1, 'red'), (5, 'red'), (1, 'purple')]",1.9621515274047852
+41,3,1,4,8,2,12,"[(0, 'red'), (4, 'green'), (5, 'blue'), (2, 'purple'), (1, 'red'), (7, 'blue'), (3, 'purple'), (6, 'blue'), (5, 'red'), (2, 'purple'), (0, 'purple'), (1, 'purple')]",1.07283616065979
+42,3,1,4,8,2,10,"[(3, 'blue'), (7, 'purple'), (6, 'red'), (2, 'blue'), (3, 'purple'), (7, 'red'), (6, 'blue'), (1, 'purple'), (4, 'green'), (5, 'red')]",1.07486891746521
+43,3,1,4,9,2,10,"[(2, 'purple'), (0, 'purple'), (3, 'blue'), (6, 'red'), (7, 'red'), (2, 'blue'), (1, 'purple'), (4, 'green'), (6, 'blue'), (5, 'red')]",1.277735948562622
+44,3,1,4,9,2,10,"[(0, 'blue'), (7, 'purple'), (2, 'blue'), (1, 'green'), (3, 'purple'), (5, 'red'), (0, 'green'), (6, 'blue'), (4, 'green'), (1, 'purple')]",1.224698781967163
+45,3,1,4,11,2,12,"[(0, 'blue'), (7, 'purple'), (6, 'red'), (4, 'green'), (2, 'blue'), (0, 'green'), (3, 'purple'), (7, 'red'), (4, 'green'), (6, 'blue'), (5, 'red'), (1, 'purple')]",2.276487112045288
+46,3,1,4,10,2,12,"[(7, 'green'), (3, 'blue'), (2, 'purple'), (5, 'red'), (6, 'green'), (7, 'blue'), (4, 'green'), (0, 'green'), (6, 'blue'), (3, 'purple'), (4, 'green'), (1, 'purple')]",1.4357092380523682
+47,3,1,4,8,2,10,"[(7, 'purple'), (6, 'red'), (3, 'blue'), (4, 'green'), (5, 'purple'), (7, 'red'), (1, 'purple'), (2, 'blue'), (5, 'red'), (6, 'blue')]",1.102576494216919
+48,3,1,4,6,2,12,"[(0, 'red'), (2, 'purple'), (3, 'blue'), (4, 'green'), (1, 'red'), (7, 'blue'), (6, 'green'), (5, 'red'), (4, 'green'), (6, 'blue'), (0, 'purple'), (1, 'purple')]",1.1470730304718018
+49,3,1,4,11,2,12,"[(7, 'purple'), (3, 'purple'), (7, 'purple'), (0, 'blue'), (3, 'purple'), (6, 'red'), (4, 'green'), (2, 'blue'), (1, 'purple'), (7, 'red'), (6, 'blue'), (5, 'red')]",2.5089290142059326
+50,3,1,4,12,2,12,"[(7, 'purple'), (0, 'blue'), (2, 'blue'), (6, 'red'), (4, 'green'), (5, 'purple'), (7, 'red'), (3, 'red'), (1, 'purple'), (6, 'blue'), (7, 'red'), (5, 'red')]",2.5218281745910645
+51,3,1,4,9,2,10,"[(2, 'purple'), (0, 'blue'), (3, 'purple'), (6, 'red'), (2, 'blue'), (7, 'red'), (1, 'purple'), (6, 'blue'), (4, 'green'), (5, 'red')]",1.8167500495910645
+52,3,1,4,10,2,10,"[(2, 'purple'), (6, 'red'), (0, 'blue'), (7, 'red'), (3, 'purple'), (1, 'purple'), (4, 'green'), (2, 'blue'), (6, 'blue'), (5, 'red')]",1.526465654373169
+53,3,1,4,9,2,10,"[(7, 'purple'), (6, 'red'), (4, 'green'), (3, 'blue'), (5, 'purple'), (7, 'red'), (1, 'purple'), (5, 'red'), (7, 'blue'), (6, 'blue')]",1.2453172206878662
+54,3,1,4,10,2,12,"[(3, 'blue'), (7, 'green'), (5, 'red'), (2, 'purple'), (6, 'green'), (0, 'purple'), (1, 'blue'), (3, 'blue'), (4, 'green'), (1, 'purple'), (2, 'blue'), (6, 'blue')]",2.017534017562866
+55,3,1,4,7,2,12,"[(2, 'purple'), (7, 'green'), (5, 'red'), (0, 'purple'), (6, 'green'), (3, 'blue'), (7, 'red'), (5, 'red'), (7, 'blue'), (4, 'green'), (1, 'purple'), (6, 'blue')]",1.1160821914672852
+56,3,1,4,9,2,10,"[(3, 'blue'), (0, 'red'), (4, 'green'), (2, 'purple'), (1, 'red'), (7, 'blue'), (0, 'purple'), (6, 'blue'), (5, 'red'), (1, 'purple')]",2.4784557819366455
+57,3,1,4,9,2,10,"[(0, 'red'), (3, 'blue'), (2, 'purple'), (4, 'green'), (1, 'red'), (7, 'blue'), (5, 'red'), (6, 'blue'), (0, 'purple'), (1, 'purple')]",2.4773831367492676
+58,3,1,4,8,2,18,"[(0, 'red'), (3, 'blue'), (2, 'blue'), (4, 'red'), (7, 'purple'), (3, 'purple'), (1, 'purple'), (7, 'green'), (0, 'blue'), (5, 'red'), (6, 'green'), (7, 'red'), (5, 'purple'), (2, 'blue'), (4, 'green'), (6, 'blue'), (1, 'purple'), (5, 'red')]",2.1630780696868896
+59,3,1,4,9,2,12,"[(0, 'blue'), (7, 'green'), (5, 'red'), (1, 'red'), (5, 'green'), (4, 'green'), (2, 'blue'), (5, 'red'), (7, 'purple'), (6, 'blue'), (3, 'purple'), (1, 'purple')]",1.3066961765289307
+60,3,1,4,8,2,12,"[(3, 'blue'), (1, 'green'), (7, 'purple'), (6, 'red'), (2, 'blue'), (5, 'purple'), (0, 'green'), (1, 'purple'), (7, 'red'), (6, 'blue'), (5, 'red'), (4, 'green')]",1.171746015548706
+61,3,1,4,8,2,12,"[(0, 'red'), (7, 'purple'), (3, 'blue'), (4, 'green'), (2, 'blue'), (6, 'blue'), (3, 'purple'), (7, 'blue'), (1, 'red'), (5, 'red'), (1, 'purple'), (6, 'blue')]",1.4449725151062012
+62,3,1,4,8,2,10,"[(7, 'green'), (5, 'red'), (3, 'blue'), (2, 'purple'), (6, 'green'), (0, 'purple'), (7, 'blue'), (4, 'green'), (6, 'blue'), (1, 'purple')]",1.720654010772705
+63,3,1,4,7,2,10,"[(2, 'purple'), (0, 'purple'), (3, 'blue'), (7, 'green'), (1, 'purple'), (5, 'red'), (6, 'green'), (7, 'blue'), (4, 'green'), (6, 'blue')]",1.054567575454712
+64,3,1,4,11,2,10,"[(0, 'red'), (3, 'blue'), (7, 'blue'), (4, 'green'), (1, 'red'), (5, 'red'), (2, 'purple'), (3, 'purple'), (6, 'blue'), (1, 'purple')]",2.3372344970703125
+65,3,1,4,10,2,12,"[(2, 'purple'), (0, 'blue'), (6, 'red'), (4, 'blue'), (0, 'purple'), (7, 'red'), (1, 'purple'), (6, 'blue'), (4, 'green'), (5, 'red'), (7, 'blue'), (6, 'blue')]",1.6322479248046875
+66,3,1,4,8,2,12,"[(2, 'purple'), (0, 'red'), (4, 'green'), (3, 'blue'), (1, 'red'), (7, 'blue'), (6, 'green'), (0, 'purple'), (5, 'red'), (4, 'green'), (6, 'blue'), (1, 'purple')]",1.597855806350708
+67,3,1,4,13,2,10,"[(0, 'red'), (3, 'blue'), (4, 'green'), (1, 'red'), (5, 'red'), (2, 'purple'), (0, 'purple'), (1, 'purple'), (7, 'blue'), (6, 'blue')]",3.7284555435180664
+68,3,1,4,9,2,12,"[(0, 'blue'), (2, 'purple'), (1, 'green'), (5, 'red'), (3, 'purple'), (4, 'blue'), (0, 'green'), (6, 'blue'), (7, 'red'), (1, 'purple'), (5, 'red'), (4, 'green')]",1.7513911724090576
+69,3,1,4,7,2,10,"[(0, 'red'), (4, 'green'), (2, 'purple'), (3, 'blue'), (1, 'red'), (7, 'blue'), (5, 'red'), (3, 'purple'), (6, 'blue'), (1, 'purple')]",1.930617094039917
+70,3,1,4,10,2,12,"[(0, 'blue'), (1, 'blue'), (7, 'purple'), (0, 'red'), (4, 'green'), (3, 'purple'), (5, 'blue'), (1, 'red'), (7, 'blue'), (5, 'red'), (6, 'blue'), (1, 'purple')]",2.4826157093048096
+71,3,1,4,10,2,10,"[(7, 'purple'), (0, 'blue'), (2, 'blue'), (1, 'green'), (3, 'purple'), (5, 'red'), (0, 'green'), (1, 'purple'), (6, 'blue'), (4, 'green')]",3.058778762817383
+72,3,1,4,12,2,14,"[(0, 'red'), (7, 'green'), (2, 'purple'), (4, 'red'), (3, 'blue'), (6, 'green'), (5, 'red'), (7, 'blue'), (4, 'green'), (6, 'purple'), (2, 'purple'), (6, 'blue'), (0, 'purple'), (1, 'purple')]",2.753314733505249
+73,3,1,4,7,2,12,"[(3, 'blue'), (7, 'blue'), (0, 'red'), (2, 'purple'), (6, 'blue'), (3, 'purple'), (1, 'red'), (4, 'green'), (2, 'purple'), (0, 'purple'), (5, 'red'), (1, 'purple')]",1.653843879699707
+74,3,1,4,9,2,14,"[(7, 'green'), (2, 'purple'), (0, 'purple'), (6, 'green'), (3, 'blue'), (5, 'red'), (4, 'red'), (2, 'blue'), (5, 'red'), (4, 'green'), (7, 'red'), (1, 'purple'), (6, 'blue'), (5, 'red')]",2.592283010482788
+75,3,1,4,10,2,16,"[(0, 'red'), (3, 'blue'), (4, 'green'), (2, 'red'), (7, 'blue'), (3, 'blue'), (7, 'purple'), (6, 'red'), (5, 'purple'), (7, 'red'), (0, 'green'), (1, 'purple'), (2, 'blue'), (5, 'red'), (4, 'green'), (6, 'blue')]",2.4939444065093994
+76,3,1,4,12,2,12,"[(3, 'blue'), (7, 'purple'), (1, 'green'), (5, 'red'), (2, 'blue'), (3, 'purple'), (0, 'green'), (1, 'purple'), (3, 'blue'), (2, 'blue'), (4, 'green'), (6, 'blue')]",2.401801347732544
+77,3,1,4,9,2,12,"[(7, 'green'), (2, 'purple'), (0, 'red'), (4, 'red'), (3, 'blue'), (6, 'green'), (7, 'blue'), (5, 'red'), (0, 'purple'), (4, 'green'), (1, 'purple'), (6, 'blue')]",2.393246650695801
+78,3,1,4,11,2,14,"[(3, 'blue'), (1, 'green'), (0, 'green'), (2, 'blue'), (7, 'purple'), (5, 'red'), (1, 'red'), (5, 'purple'), (4, 'green'), (7, 'purple'), (5, 'red'), (3, 'purple'), (6, 'blue'), (1, 'purple')]",2.3638839721679688
+79,3,1,4,10,2,12,"[(0, 'blue'), (1, 'green'), (2, 'blue'), (0, 'green'), (5, 'red'), (7, 'purple'), (3, 'purple'), (6, 'blue'), (4, 'green'), (1, 'red'), (5, 'red'), (1, 'purple')]",3.502319097518921
+80,3,1,4,12,2,10,"[(0, 'red'), (2, 'purple'), (3, 'blue'), (4, 'green'), (1, 'red'), (7, 'blue'), (6, 'blue'), (5, 'red'), (0, 'purple'), (1, 'purple')]",3.0788204669952393
+81,3,1,4,7,2,10,"[(0, 'blue'), (2, 'purple'), (1, 'green'), (5, 'red'), (3, 'purple'), (2, 'blue'), (0, 'green'), (6, 'blue'), (1, 'purple'), (4, 'green')]",2.0564401149749756
+82,3,1,4,10,2,12,"[(0, 'blue'), (7, 'purple'), (1, 'green'), (2, 'blue'), (0, 'green'), (3, 'purple'), (5, 'red'), (6, 'blue'), (2, 'blue'), (6, 'blue'), (4, 'green'), (1, 'purple')]",3.2505571842193604
+83,3,1,4,12,2,10,"[(2, 'purple'), (7, 'green'), (3, 'blue'), (6, 'green'), (0, 'purple'), (1, 'purple'), (5, 'red'), (7, 'blue'), (4, 'green'), (6, 'blue')]",2.808616876602173
+84,3,1,4,7,2,10,"[(0, 'blue'), (7, 'purple'), (1, 'green'), (2, 'blue'), (3, 'purple'), (0, 'green'), (6, 'blue'), (5, 'red'), (4, 'green'), (1, 'purple')]",1.722412347793579
+85,3,1,4,11,2,10,"[(0, 'blue'), (1, 'green'), (2, 'blue'), (7, 'purple'), (5, 'red'), (0, 'green'), (3, 'purple'), (6, 'blue'), (4, 'green'), (1, 'purple')]",1.7858600616455078
+86,3,1,4,8,2,14,"[(0, 'red'), (2, 'purple'), (4, 'green'), (5, 'blue'), (1, 'red'), (7, 'blue'), (0, 'purple'), (5, 'green'), (3, 'red'), (1, 'purple'), (6, 'blue'), (7, 'red'), (4, 'green'), (5, 'red')]",1.686105489730835
+87,3,1,4,8,2,10,"[(2, 'purple'), (0, 'blue'), (6, 'red'), (4, 'green'), (3, 'purple'), (1, 'purple'), (2, 'blue'), (7, 'red'), (6, 'blue'), (5, 'red')]",1.3626558780670166
+88,3,1,4,12,2,10,"[(0, 'red'), (3, 'blue'), (1, 'red'), (7, 'blue'), (4, 'green'), (2, 'purple'), (5, 'red'), (6, 'blue'), (0, 'purple'), (1, 'purple')]",3.3227250576019287
+89,3,1,4,10,2,14,"[(0, 'blue'), (7, 'purple'), (2, 'blue'), (6, 'red'), (3, 'purple'), (4, 'green'), (7, 'red'), (1, 'purple'), (6, 'blue'), (0, 'green'), (3, 'purple'), (5, 'red'), (4, 'green'), (1, 'purple')]",1.7630820274353027
+90,3,1,4,12,2,14,"[(7, 'green'), (0, 'blue'), (5, 'red'), (4, 'purple'), (6, 'green'), (7, 'green'), (1, 'blue'), (6, 'green'), (3, 'blue'), (0, 'purple'), (4, 'green'), (7, 'blue'), (6, 'blue'), (1, 'purple')]",3.662053108215332
+91,3,1,4,9,2,10,"[(7, 'green'), (2, 'purple'), (6, 'green'), (5, 'red'), (4, 'green'), (3, 'blue'), (0, 'purple'), (1, 'purple'), (7, 'blue'), (6, 'blue')]",1.2842581272125244
+92,3,1,4,8,2,12,"[(3, 'blue'), (0, 'red'), (1, 'red'), (4, 'green'), (2, 'purple'), (7, 'blue'), (0, 'green'), (5, 'red'), (4, 'green'), (3, 'purple'), (6, 'blue'), (1, 'purple')]",1.6255662441253662
+93,3,1,4,9,2,10,"[(7, 'green'), (2, 'purple'), (3, 'purple'), (5, 'red'), (0, 'blue'), (6, 'green'), (4, 'green'), (2, 'blue'), (1, 'purple'), (6, 'blue')]",1.3987998962402344
+94,3,1,4,12,2,10,"[(3, 'blue'), (1, 'green'), (5, 'red'), (7, 'blue'), (2, 'purple'), (6, 'blue'), (0, 'green'), (4, 'green'), (0, 'purple'), (1, 'purple')]",2.9520351886749268
+95,3,1,4,8,2,12,"[(7, 'green'), (2, 'purple'), (3, 'green'), (7, 'green'), (0, 'purple'), (3, 'blue'), (5, 'red'), (6, 'green'), (7, 'blue'), (4, 'green'), (1, 'purple'), (6, 'blue')]",2.3662335872650146
+96,3,1,4,8,2,14,"[(0, 'red'), (2, 'purple'), (4, 'green'), (6, 'green'), (3, 'purple'), (4, 'red'), (2, 'green'), (6, 'green'), (0, 'blue'), (5, 'red'), (4, 'green'), (1, 'purple'), (2, 'blue'), (6, 'blue')]",2.3452844619750977
+97,3,1,4,9,2,10,"[(7, 'purple'), (6, 'red'), (3, 'purple'), (0, 'blue'), (4, 'green'), (2, 'blue'), (1, 'purple'), (7, 'red'), (5, 'red'), (6, 'blue')]",2.018648147583008
+98,3,1,4,9,2,10,"[(2, 'purple'), (3, 'purple'), (7, 'green'), (0, 'blue'), (6, 'green'), (2, 'blue'), (5, 'red'), (4, 'green'), (6, 'blue'), (1, 'purple')]",2.0915799140930176
+99,3,1,4,10,2,14,"[(2, 'purple'), (3, 'purple'), (0, 'blue'), (1, 'purple'), (6, 'red'), (4, 'green'), (7, 'red'), (2, 'blue'), (6, 'green'), (4, 'green'), (5, 'red'), (0, 'purple'), (6, 'blue'), (1, 'purple')]",2.1143369674682617
+100,3,1,4,10,2,12,"[(7, 'green'), (0, 'blue'), (5, 'red'), (4, 'purple'), (2, 'blue'), (6, 'green'), (0, 'purple'), (3, 'blue'), (1, 'purple'), (2, 'blue'), (4, 'green'), (6, 'blue')]",2.5760602951049805
+101,3,1,4,8,2,10,"[(2, 'purple'), (0, 'blue'), (6, 'red'), (7, 'red'), (4, 'blue'), (6, 'blue'), (3, 'purple'), (4, 'green'), (5, 'red'), (1, 'purple')]",1.4570212364196777
+102,3,1,4,10,2,16,"[(0, 'red'), (4, 'green'), (3, 'blue'), (2, 'red'), (7, 'blue'), (3, 'red'), (2, 'purple'), (6, 'blue'), (1, 'red'), (0, 'purple'), (5, 'red'), (2, 'purple'), (7, 'blue'), (3, 'purple'), (1, 'purple'), (6, 'blue')]",2.1197357177734375
+103,3,1,4,11,2,12,"[(7, 'purple'), (0, 'red'), (4, 'green'), (3, 'blue'), (2, 'blue'), (3, 'purple'), (5, 'green'), (1, 'red'), (4, 'green'), (6, 'blue'), (5, 'red'), (1, 'purple')]",2.505814790725708
+104,3,1,4,10,2,14,"[(3, 'blue'), (0, 'red'), (1, 'red'), (0, 'red'), (4, 'green'), (5, 'green'), (7, 'blue'), (1, 'red'), (4, 'green'), (2, 'purple'), (5, 'red'), (0, 'purple'), (1, 'purple'), (6, 'blue')]",2.6275267601013184
+105,3,1,4,10,2,10,"[(2, 'purple'), (7, 'green'), (5, 'blue'), (6, 'green'), (0, 'purple'), (7, 'blue'), (5, 'red'), (1, 'purple'), (4, 'green'), (6, 'blue')]",1.8349835872650146
+106,3,1,4,12,2,10,"[(0, 'red'), (4, 'green'), (3, 'blue'), (7, 'blue'), (2, 'purple'), (3, 'purple'), (1, 'red'), (5, 'red'), (1, 'purple'), (6, 'blue')]",3.274113893508911
+107,3,1,4,10,2,10,"[(7, 'green'), (5, 'red'), (2, 'purple'), (3, 'purple'), (0, 'blue'), (6, 'green'), (1, 'purple'), (4, 'green'), (2, 'blue'), (6, 'blue')]",2.3913161754608154
+108,3,1,4,11,2,10,"[(2, 'purple'), (7, 'green'), (5, 'red'), (3, 'blue'), (6, 'green'), (0, 'purple'), (4, 'green'), (2, 'blue'), (1, 'purple'), (6, 'blue')]",2.9445486068725586
+109,3,1,4,9,2,12,"[(0, 'blue'), (2, 'purple'), (1, 'blue'), (7, 'green'), (5, 'red'), (3, 'blue'), (6, 'green'), (7, 'blue'), (4, 'green'), (3, 'purple'), (6, 'blue'), (1, 'purple')]",1.9269392490386963
+110,3,1,4,9,2,12,"[(7, 'purple'), (0, 'blue'), (1, 'green'), (3, 'purple'), (6, 'red'), (7, 'red'), (2, 'blue'), (5, 'green'), (4, 'green'), (1, 'purple'), (6, 'blue'), (5, 'red')]",1.3676817417144775
+111,3,1,4,8,2,14,"[(7, 'purple'), (3, 'purple'), (7, 'green'), (5, 'red'), (0, 'blue'), (6, 'green'), (7, 'red'), (2, 'blue'), (1, 'purple'), (4, 'green'), (6, 'red'), (7, 'red'), (5, 'red'), (6, 'blue')]",2.1950125694274902
+112,3,1,4,11,2,12,"[(3, 'blue'), (7, 'purple'), (1, 'green'), (2, 'blue'), (6, 'blue'), (5, 'red'), (3, 'green'), (2, 'green'), (3, 'purple'), (0, 'green'), (1, 'purple'), (4, 'green')]",1.9459002017974854
+113,3,1,4,12,2,12,"[(0, 'red'), (4, 'green'), (3, 'blue'), (1, 'red'), (7, 'purple'), (2, 'blue'), (5, 'red'), (6, 'green'), (4, 'green'), (3, 'purple'), (1, 'purple'), (6, 'blue')]",3.1389000415802
+114,3,1,4,8,2,16,"[(3, 'blue'), (7, 'green'), (2, 'purple'), (1, 'blue'), (3, 'blue'), (5, 'red'), (6, 'green'), (0, 'purple'), (7, 'blue'), (2, 'purple'), (4, 'green'), (6, 'blue'), (7, 'red'), (0, 'purple'), (1, 'purple'), (5, 'red')]",1.7169485092163086
+115,3,1,4,11,2,12,"[(2, 'purple'), (7, 'green'), (6, 'green'), (3, 'purple'), (5, 'red'), (0, 'blue'), (2, 'blue'), (4, 'green'), (1, 'purple'), (7, 'red'), (6, 'blue'), (5, 'red')]",2.5628011226654053
+116,3,1,4,9,2,12,"[(2, 'purple'), (3, 'blue'), (7, 'green'), (0, 'purple'), (5, 'red'), (6, 'green'), (4, 'red'), (7, 'blue'), (5, 'red'), (4, 'green'), (1, 'purple'), (6, 'blue')]",2.7504286766052246
+117,3,1,4,11,2,14,"[(7, 'green'), (2, 'purple'), (6, 'green'), (5, 'red'), (3, 'blue'), (0, 'purple'), (7, 'red'), (4, 'green'), (2, 'blue'), (3, 'red'), (7, 'red'), (6, 'blue'), (1, 'purple'), (5, 'red')]",2.7026138305664062
+118,3,1,4,9,2,12,"[(3, 'blue'), (1, 'green'), (2, 'blue'), (5, 'red'), (3, 'green'), (7, 'purple'), (1, 'green'), (3, 'purple'), (0, 'green'), (6, 'blue'), (4, 'green'), (1, 'purple')]",1.3584611415863037
+119,3,1,4,13,2,12,"[(7, 'green'), (0, 'red'), (2, 'purple'), (6, 'green'), (3, 'purple'), (4, 'red'), (0, 'blue'), (5, 'red'), (4, 'green'), (1, 'purple'), (2, 'blue'), (6, 'blue')]",3.267458915710449
+120,3,1,4,10,2,10,"[(2, 'purple'), (0, 'red'), (3, 'blue'), (1, 'red'), (7, 'blue'), (0, 'purple'), (4, 'green'), (5, 'red'), (1, 'purple'), (6, 'blue')]",2.753054141998291
+121,3,1,4,7,2,10,"[(0, 'red'), (7, 'purple'), (3, 'blue'), (2, 'blue'), (1, 'red'), (4, 'green'), (3, 'purple'), (5, 'red'), (6, 'blue'), (1, 'purple')]",1.5664031505584717
+122,3,1,4,9,2,10,"[(2, 'purple'), (3, 'blue'), (6, 'red'), (4, 'green'), (0, 'purple'), (7, 'red'), (1, 'purple'), (2, 'blue'), (5, 'red'), (6, 'blue')]",1.9234297275543213
+123,3,1,4,7,2,10,"[(2, 'purple'), (6, 'red'), (4, 'green'), (0, 'blue'), (3, 'purple'), (7, 'red'), (2, 'blue'), (1, 'purple'), (6, 'blue'), (5, 'red')]",2.1792654991149902
+124,3,1,4,8,2,14,"[(3, 'blue'), (7, 'blue'), (0, 'red'), (2, 'purple'), (4, 'green'), (6, 'blue'), (1, 'red'), (0, 'green'), (3, 'purple'), (4, 'blue'), (5, 'red'), (6, 'blue'), (4, 'green'), (1, 'purple')]",1.8471529483795166
+125,3,1,4,10,2,12,"[(0, 'blue'), (2, 'purple'), (3, 'purple'), (6, 'red'), (7, 'red'), (1, 'purple'), (2, 'blue'), (4, 'green'), (5, 'red'), (0, 'blue'), (2, 'blue'), (6, 'blue')]",2.650038003921509
+126,3,1,4,9,2,10,"[(2, 'purple'), (6, 'red'), (4, 'green'), (3, 'blue'), (0, 'purple'), (7, 'red'), (2, 'blue'), (6, 'blue'), (1, 'purple'), (5, 'red')]",2.352694034576416
+127,3,1,4,12,2,12,"[(2, 'purple'), (7, 'green'), (5, 'red'), (6, 'green'), (3, 'blue'), (0, 'purple'), (7, 'blue'), (4, 'green'), (1, 'purple'), (0, 'purple'), (1, 'purple'), (6, 'blue')]",2.837542772293091
+128,3,1,4,6,2,10,"[(3, 'blue'), (0, 'red'), (2, 'purple'), (1, 'red'), (4, 'green'), (7, 'blue'), (5, 'red'), (0, 'purple'), (6, 'blue'), (1, 'purple')]",1.5687453746795654
+129,3,1,4,6,2,12,"[(7, 'green'), (5, 'red'), (3, 'blue'), (1, 'red'), (5, 'green'), (2, 'purple'), (0, 'purple'), (2, 'blue'), (4, 'green'), (5, 'red'), (1, 'purple'), (6, 'blue')]",1.544262409210205
+130,3,1,4,9,2,10,"[(7, 'purple'), (0, 'blue'), (6, 'red'), (4, 'green'), (5, 'purple'), (1, 'purple'), (7, 'red'), (2, 'blue'), (5, 'red'), (6, 'blue')]",2.006685495376587
+131,3,1,4,10,2,12,"[(0, 'blue'), (1, 'green'), (5, 'red'), (4, 'blue'), (7, 'purple'), (3, 'purple'), (0, 'green'), (6, 'blue'), (1, 'purple'), (2, 'blue'), (4, 'green'), (6, 'blue')]",2.073723793029785
+132,3,1,4,10,2,10,"[(2, 'purple'), (7, 'green'), (5, 'blue'), (6, 'green'), (3, 'purple'), (7, 'blue'), (5, 'red'), (4, 'green'), (6, 'blue'), (1, 'purple')]",1.6669690608978271
+133,3,1,4,11,2,12,"[(0, 'blue'), (1, 'green'), (2, 'blue'), (5, 'red'), (7, 'purple'), (3, 'purple'), (0, 'green'), (6, 'blue'), (1, 'red'), (5, 'red'), (4, 'green'), (1, 'purple')]",1.589606761932373
+134,3,1,4,9,2,10,"[(0, 'blue'), (2, 'purple'), (6, 'red'), (4, 'blue'), (7, 'red'), (6, 'blue'), (4, 'green'), (5, 'red'), (0, 'purple'), (1, 'purple')]",1.7934088706970215
+135,3,1,4,9,2,14,"[(0, 'red'), (2, 'purple'), (4, 'green'), (6, 'green'), (4, 'red'), (5, 'red'), (0, 'blue'), (3, 'purple'), (7, 'green'), (6, 'green'), (2, 'blue'), (4, 'green'), (1, 'purple'), (6, 'blue')]",1.4245672225952148
+136,3,1,4,9,2,10,"[(2, 'purple'), (0, 'red'), (3, 'blue'), (1, 'red'), (0, 'purple'), (4, 'green'), (5, 'red'), (7, 'blue'), (6, 'blue'), (1, 'purple')]",1.7134828567504883
+137,3,1,4,7,2,10,"[(7, 'green'), (5, 'red'), (0, 'blue'), (2, 'purple'), (3, 'purple'), (6, 'green'), (2, 'blue'), (1, 'purple'), (4, 'green'), (6, 'blue')]",1.604203462600708
+138,3,1,4,10,2,10,"[(7, 'green'), (2, 'purple'), (0, 'blue'), (6, 'green'), (3, 'purple'), (5, 'red'), (1, 'purple'), (4, 'green'), (2, 'blue'), (6, 'blue')]",1.5704190731048584
+139,3,1,4,11,2,10,"[(3, 'blue'), (1, 'green'), (5, 'red'), (7, 'purple'), (0, 'green'), (2, 'blue'), (4, 'green'), (3, 'purple'), (6, 'blue'), (1, 'purple')]",1.8019640445709229
+140,3,1,4,10,2,12,"[(7, 'green'), (5, 'red'), (4, 'purple'), (6, 'green'), (3, 'blue'), (0, 'purple'), (2, 'green'), (1, 'purple'), (7, 'blue'), (0, 'green'), (6, 'blue'), (4, 'green')]",1.4172093868255615
+141,3,1,4,8,2,10,"[(0, 'red'), (3, 'blue'), (1, 'red'), (2, 'blue'), (7, 'purple'), (4, 'green'), (6, 'blue'), (5, 'red'), (3, 'purple'), (1, 'purple')]",1.4492597579956055
+142,3,1,4,9,2,14,"[(2, 'purple'), (0, 'blue'), (7, 'green'), (6, 'green'), (1, 'blue'), (5, 'red'), (0, 'purple'), (7, 'red'), (3, 'blue'), (2, 'blue'), (1, 'purple'), (4, 'green'), (6, 'blue'), (5, 'red')]",1.4580538272857666
+143,3,1,4,12,2,12,"[(7, 'purple'), (6, 'red'), (4, 'green'), (0, 'blue'), (2, 'blue'), (3, 'purple'), (7, 'red'), (5, 'red'), (7, 'purple'), (6, 'blue'), (3, 'purple'), (1, 'purple')]",1.7194290161132812
+144,3,1,4,12,2,10,"[(0, 'blue'), (2, 'blue'), (7, 'purple'), (1, 'green'), (3, 'purple'), (6, 'blue'), (5, 'red'), (0, 'green'), (4, 'green'), (1, 'purple')]",1.7495853900909424
+145,3,1,4,10,2,10,"[(0, 'red'), (4, 'green'), (7, 'purple'), (3, 'blue'), (1, 'red'), (2, 'blue'), (3, 'purple'), (5, 'red'), (1, 'purple'), (6, 'blue')]",1.506361722946167
+146,3,1,4,8,2,10,"[(3, 'blue'), (7, 'purple'), (1, 'green'), (5, 'purple'), (7, 'blue'), (0, 'green'), (1, 'purple'), (5, 'red'), (6, 'blue'), (4, 'green')]",1.1776931285858154
+147,3,1,4,10,2,12,"[(2, 'purple'), (7, 'green'), (5, 'red'), (0, 'purple'), (3, 'blue'), (6, 'green'), (7, 'red'), (1, 'purple'), (5, 'red'), (4, 'green'), (2, 'blue'), (6, 'blue')]",1.4731192588806152
+148,3,1,4,8,2,10,"[(7, 'green'), (0, 'blue'), (5, 'red'), (4, 'purple'), (2, 'blue'), (6, 'green'), (0, 'purple'), (4, 'green'), (1, 'purple'), (6, 'blue')]",1.1516554355621338
+149,3,1,4,10,2,12,"[(7, 'green'), (5, 'green'), (0, 'red'), (2, 'purple'), (3, 'blue'), (1, 'red'), (7, 'blue'), (4, 'green'), (5, 'red'), (3, 'purple'), (1, 'purple'), (6, 'blue')]",1.585021734237671

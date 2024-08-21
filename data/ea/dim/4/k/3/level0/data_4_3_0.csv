@@ -1,0 +1,4 @@
+,d,k,l,t,level,Min,Moves,CPU Time
+0,4,3,11,227,0,12,"[(10, 'green'), (12, 'green'), (10, 'purple'), (14, 'purple'), (8, 'yellow'), (10, 'yellow'), (4, 'blue'), (5, 'red'), (1, 'yellow'), (3, 'purple'), (13, 'green'), (7, 'purple')]",389.0036208629608
+1,4,3,11,711,0,13,"[(10, 'green'), (12, 'green'), (14, 'purple'), (8, 'yellow'), (4, 'blue'), (5, 'red'), (7, 'purple'), (11, 'yellow'), (1, 'yellow'), (3, 'yellow'), (14, 'green'), (13, 'green'), (1, 'yellow')]",1731.885220527649
+2,4,3,11,709,0,15,"[(10, 'green'), (12, 'green'), (8, 'yellow'), (10, 'purple'), (4, 'blue'), (3, 'red'), (5, 'red'), (7, 'purple'), (0, 'yellow'), (9, 'yellow'), (10, 'yellow'), (1, 'yellow'), (11, 'green'), (14, 'green'), (13, 'green')]",1672.7937746047974

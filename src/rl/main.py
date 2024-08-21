@@ -98,7 +98,12 @@ def main():
         },
     }
 
-    start = levels[args.dim][args.level]
+    try : 
+        start = levels[args.dim][args.level]
+    except KeyError : 
+        print(f"The puzzle of dimension {args.dim} has no level {args.level}")
+        exit(1)
+    
     if args.dim == 3 :
         #colors = ['white', 'purple', 'white', 'white', 'green', 'red', 'blue', 'white']
         target = [(4, "green"), (1, "purple"), (5, "red"), (6, "blue")]
@@ -160,7 +165,7 @@ def main():
     #print(rst_data)
     df_rst = DataFrame(rst_data)
     if args.save :
-        log_folder = "../../data/rl/dim/"+str(args.dim)+"/k/"+str(k)+"/level"+str(args.level)+"/"
+        log_folder = "../data/rl/dim/"+str(args.dim)+"/k/"+str(k)+"/level"+str(args.level)+"/"
         df_rst.to_csv(log_folder+"rl_solutions"+str(args.job)+".csv")
 
 

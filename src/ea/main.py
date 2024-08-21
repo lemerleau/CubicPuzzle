@@ -197,8 +197,11 @@ def main():
         3: [(4, "red"), (1, "purple"), (5, "green"), (6, "blue")]
         },
     }
-
-    ring_pos = levels[args.dim][args.level]
+    try : 
+        ring_pos = levels[args.dim][args.level]
+    except KeyError : 
+        print(f"The puzzle of dimension {args.dim} has no level {args.level}")
+        exit(1)
     if args.dim == 3 :
         #colors = ['white', 'purple', 'white', 'white', 'green', 'red', 'blue', 'white']
         target = [(4, "green"), (1, "purple"), (5, "red"), (6, "blue")]
@@ -279,7 +282,7 @@ def main():
     if args.store:
         #log_folder = str(datetime.now()).replace(" ", "") + '/'
         #log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/alpha/"+str(args.alpha)+ '/'
-        log_folder = "../../data/ea/dim/"+str(args.dim)+"/k/"+str(k)+"/level"+str(args.level)+"/"
+        log_folder = "../data/ea/dim/"+str(args.dim)+"/k/"+str(k)+"/level"+str(args.level)+"/"
         #log_folder = "../log/dim/"+str(args.dim)+"/level"+str(args.level)+"/mulevy/"+str(args.mu)+ '/'
         try:
             mkdir(log_folder)
