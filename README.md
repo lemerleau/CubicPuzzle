@@ -1,10 +1,11 @@
 <!--(@Author: [Nono Saha Cyrille Merleau](#) and [Miguel O'malley](#) )-->
+## Approximately Optimal Search on a Higher-dimensional Sliding Puzzle
 This repository presents data and codes for the computational study of the high-dimensional sliding puzzle. Three methods are implemented here: evolutionary algorithm (EA), Reinforcement Learning (RL), and A* search.
 
 ![images/sp_solution.png](images/sp_solution2.png)
-**Figure 1:** Illustration of a solution for the high-dimensional puzzle for parameters d=3, k=2 and difficulty level 1. 
+**Figure 1:** Illustration of a solution for the high-dimensional puzzle for parameters $d=3, k=2$ and difficulty level $1$. 
 
-For a given starting and target configuration, dimension d, face dimension k, and number of uncoloured vertices l, The sliding puzzle is built on a hypercube of a dimension $d$, i.e. $2^d - 1 $ vertices. Several vertices ($2^d -l$) are coloured, and there is a ring with the same colour for each colour. The sliding puzzle consists of moving (or sliding) the rings to different free vertices until all the ring colours match the vertex colours.
+For a given starting and target configuration, dimension $d$, face dimension $k$, and number of uncoloured vertices l, The sliding puzzle is built on a hypercube of a dimension $d$, i.e. $2^d - 1$ vertices. Several vertices ($2^d -l$) are coloured, and there is a ring with the same colour for each colour. The sliding puzzle consists of moving (or sliding) the rings to different free vertices until all the ring colours match the vertex colours.
 
 The repo is organised as follows:
 
@@ -50,39 +51,39 @@ The installation was tested on the following operating systems:
 First, please clone the git repo using the command:
 
 ```
-      $ git clone [repo link](#)
-      $ cd CubicPuzzle
-      $ make requirements //In case the dependencies are not yet installed.  
-      $ cd src/
-      $ python ea/main.py python ea/main.py -N 1000 -mu 1.8 --level 0 --dim 3 -k 2 -T 100 --levy
+$ git clone [repo link](#)
+$ cd CubicPuzzle
+$ make requirements //In case the dependencies are not yet installed.  
+$ cd src/
+$ python ea/main.py python ea/main.py -N 1000 -mu 1.8 --level 0 --dim 3 -k 2 -T 100 --levy
 ```
 
 For more details about the parameters, please use:
 
 ```bash
-	❯ python ea/main.py --help
-	usage: main.py [-h] [-mu MU] [-T T] [-N N] [-k K] [--job JOB] [--store] [--print] [--alpha ALPHA] [--level LEVEL]
-	               [--dim DIM] [--levy]
+❯ python ea/main.py --help
+usage: main.py [-h] [-mu MU] [-T T] [-N N] [-k K] [--job JOB] [--store] [--print] [--alpha ALPHA] [--level LEVEL]
+[--dim DIM] [--levy]
 	
-	Options:
-	  -h, --help     show this help message and exit
-	  -mu MU         Mutation rate (default: 1.8)
-	  -T T           Number of generations (default: 10)
-	  -N N           Initial population size (default: 10)
-	  -k K           Move dimension. When not given, the default value is k = dimension -1 (default: None)
-	  --job JOB      Number of jobs (default: 1)
-	  --store        store the output data (default: False)
-	  --print        run in a verbose mode (default: False)
-	  --alpha ALPHA  balancing parameter for the selection force fitness and number of moves (default: 0.15)
-	  --level LEVEL  Level of the puzzle difficulty. There are four levels: 0: easy (default: 0)
-	  --dim DIM      Dimension of the puzzle. There are only two considered 3 and 4 (default: 3)
-	  --levy         Use a Levy mutation scheme (default: False) 	  
+Options:
+  -h, --help     show this help message and exit
+  -mu MU         Mutation rate (default: 1.8)
+  -T T           Number of generations (default: 10)
+  -N N           Initial population size (default: 10)
+  -k K           Move dimension. When not given, the default value is k = dimension -1 (default: None)
+  --job JOB      Number of jobs (default: 1)
+  --store        store the output data (default: False)
+  --print        run in a verbose mode (default: False)
+  --alpha ALPHA  balancing parameter for the selection force fitness and number of moves (default: 0.15)
+  --level LEVEL  Level of the puzzle difficulty. There are four levels: 0: easy (default: 0)
+  --dim DIM      Dimension of the puzzle. There are only two considered 3 and 4 (default: 3)
+  --levy         Use a Levy mutation scheme (default: False) 	  
 ```
 
 For the A* and RL methods, please navigate the corresponding repository and use the help to see how to set parameters. 
 
 ```
-	$ python rl/main.py
+$ python rl/main.py
 ```
 
 ## Citations
