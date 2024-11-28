@@ -89,4 +89,4 @@ $ python rl/main.py
 ## Citations
 If you use this tool, please cite the following article
 
-Merleau, N.S.C. et al. Approximately Optimal Search on a Higher-dimensional Sliding Puzzle. ACM Transactions on Evolutionary Learning and Optimization or the ACM Transactions on Algorithm, 335 (2024). [To be defined](#)
+Merleau, N.S.C. et al. Approximately Optimal Search on a Higher-dimensional Sliding Puzzle. Arxiv:link (2024). [To be defined](#)
