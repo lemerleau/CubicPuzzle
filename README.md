@@ -87,6 +87,6 @@ $ python rl/main.py
 ```
 
 ## Citations
-If you use this tool, please cite the following article
+If you encounter any problem while using this tool, please email cyrillecardinale@gmail.com.
 
 Merleau, N.S.C. et al. Approximately Optimal Search on a Higher-dimensional Sliding Puzzle. Arxiv:link (2024). [To be defined](#)
